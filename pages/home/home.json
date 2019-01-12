@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "个人所得税",
+  "usingComponents": {
+    "van-button": "../../miniprogram_npm/vant-weapp/button/index",
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon/index",
+    "van-field": "../../miniprogram_npm/vant-weapp/field/index",
+    "van-checkbox": "../../miniprogram_npm/vant-weapp/checkbox/index",
+    "van-row": "../../miniprogram_npm/vant-weapp/row/index",
+    "van-col": "../../miniprogram_npm/vant-weapp/col/index"
+  }
+}

@@ -1,0 +1,7 @@
+/**app.wxss**/
+@import "/style/font-awesome.wxss";
+
+
+.container {
+  
+}

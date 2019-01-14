@@ -1,27 +1,27 @@
-const app = getApp()
-
 Page({
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    //  地区
+    area: 'beijing',
+    //  税前工资
+    grossPay: 0
   },
-  bindNavLottery: function () {
-    wx.navigateTo({
-      url: '../lottery/lottery',
-    })
+  bindAreaChange: function(e) {
+    this.setData({
+      area: e.detail
+    });
   },
-  bindNavMap: function () {
-    wx.navigateTo({
-      url: '../map/map',
-    })
+  bindGrossPayChange: function (e) {
+    this.setData({
+      grossPay: e.detail
+    });
   },
   onShow: function () {
-    if (app.globalData.userInfo) {
-    }
+    
   },
   onLoad: function (options) {
     //  小程序加载完毕
   },
-  onHide: function() {
-    
+  onHide: function () {
+
   }
 })

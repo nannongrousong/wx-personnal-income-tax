@@ -1,55 +1,11 @@
 <view class="container">
-
-  <van-field left-icon='cash-back-record' placeholder='税前工资' use-button-slot>
-    <van-button slot="button" size="small" type="primary">计算
-    </van-button>
-  </van-field>
-
-  <view>
-    <view>五险一金汇缴设置</view>
-    <view>
-      <text>社保汇缴基数（下限）</text>
-      <van-row>
-        <van-col span='10'>
-          <van-field placeholder='3000'></van-field>
-        </van-col>
-        <van-col span='8'>
-          <van-checkbox value="{{ checked }}" bind:change="onChange">自定义</van-checkbox>
-        </van-col>
-      </van-row>
-    </view>
-
-    <view>
-      <text>公积金汇缴基数（下限）</text>
-      <van-row>
-        <van-col span='12'>
-          <van-field placeholder='5000'></van-field>
-        </van-col>
-        <van-col span='8'>
-          <van-checkbox value="{{ checked }}" bind:change="onChange">自定义</van-checkbox>
-        </van-col>
-      </van-row>
-    </view>
-    <van-row>
-      <van-col span='12'>
-        <van-checkbox value="{{ checked }}" bind:change="onChange">汇缴住房公积金</van-checkbox>
-      </van-col>
-      <van-col span='8'>
-        <van-field></van-field>
-      </van-col>
-    </van-row>
-    <van-row>
-      <van-col span='12'>
-        <van-checkbox value="{{ checked }}" bind:change="onChange">汇缴补充公积金</van-checkbox>
-      </van-col>
-      <van-col span='8'>
-<van-field></van-field>
-      </van-col>
-    </van-row>
+  <view style='height: 20rpx;'></view>
 
 
 
-  </view>
+  <main-oper area='{{ area }}' grossPay='{{ grossPay }}' bindAreaChange='bindAreaChange' bindGrossPayChange='bindGrossPayChange'></main-oper>
+  <base-insurance></base-insurance>
+  <special-addition></special-addition>
 
 
 </view>

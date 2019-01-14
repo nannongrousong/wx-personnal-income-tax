@@ -1,0 +1,21 @@
+.wrapper {
+  background-color: #FFF;
+  margin: 20rpx; 
+  padding: 30rpx;
+}
+
+.wrapper .title {
+  font-weight: bold;
+}
+
+.mt-10 {
+  margin-top: 10rpx;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.display-flex {
+  display: flex;
+}

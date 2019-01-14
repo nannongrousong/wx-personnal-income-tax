@@ -1,0 +1,8 @@
+@import "/style/common.wxss";
+
+.row {
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  vertical-align: middle;
+}

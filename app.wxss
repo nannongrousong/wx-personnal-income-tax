@@ -1,7 +1,12 @@
 /**app.wxss**/
 @import "/style/font-awesome.wxss";
 
+page {
+  height: 100%;
+  font-size: 26rpx;
+}
 
 .container {
-  
+  background-color: #EEE;
+  height: 100%;
 }

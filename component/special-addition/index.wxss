@@ -1,0 +1,23 @@
+@import "/style/common.wxss";
+
+.form-wrapper {
+  display: inline-block;
+  border: 1px solid green;
+  width: 50%;
+  height: 1.4rem;
+  vertical-align: middle;
+}
+
+.picker-show {
+  height: 1.4rem;
+  line-height: 1.4rem;
+  vertical-align: middle;
+}
+
+.form-label {
+  color: red;
+  line-height: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+  vertical-align: middle;
+}

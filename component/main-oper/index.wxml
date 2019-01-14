@@ -1,0 +1,8 @@
+<view class='wrapper' style='display: flex;'>
+  <picker style='flex: 3' bindchange='bindAreaChange' value="{{areaArrIndex}}" range="{{areaArr}}" range-key='text'>
+    <view class='row'>{{areaArr[areaArrIndex].text}}</view>
+  </picker>
+
+  <input style='flex: 5' bindinput='bindPayInput' placeholder='税前工资' type='number' placeholder='税前工资'></input>
+  <view class='row' style='flex: 2'>计算</view>
+</view>

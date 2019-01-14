@@ -1,0 +1,32 @@
+<view class='wrapper'>
+  <view class='title'>五险一金汇缴设置</view>
+  <view>
+    <text>社保汇缴基数（下限）</text>
+    <view class='display-flex'>
+      <input class='row width-50' placeholder='3000' disabled='{{ !socialChecked }}' ></input>
+      <checkbox class='row width-50' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+    </view>
+  </view>
+
+  <view>
+    <text>公积金汇缴基数（下限）</text>
+    <view class='display-flex'>
+      <input class='row width-50' placeholder='5000' disabled='{{ !fundChecked }}'></input>
+      <checkbox class='row width-50' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+    </view>
+  </view>
+
+  <view class='display-flex'>
+    <checkbox class='row width-50' data-type='baseFund' checked='{{ baseFundChecked ? "checked" : "" }}' bindtap='bindCheckChange' >汇缴住房公积金</checkbox>
+    <picker class='row width-50' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text' disabled='{{ !baseFundChecked }}'>
+      <view class='row'>{{baseFundArr[baseFundArrIndex].text}}</view>
+    </picker>
+  </view>
+
+  <view class='display-flex'>
+    <checkbox class='row width-50' data-type='suppleFund' checked='{{ suppleFundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>汇缴补充公积金</checkbox>
+    <picker class='row width-50' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text' disabled='{{ !suppleFundChecked }}'>
+      <view class='row'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
+    </picker>
+  </view>
+</view>

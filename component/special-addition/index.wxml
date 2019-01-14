@@ -1,0 +1,45 @@
+<view class='wrapper'>
+  <view class='title'>专项附加扣除</view>
+
+  <view style='display: flex; flex-wrap: wrap; width: 100%'>
+    <view class='mt-10 width-50'>
+      <label class='form-label'>子女教育：</label>
+      <picker class='form-wrapper' data-type='childEdu' bindchange='bindSelectChange' value="{{childEduArrIndex}}" range="{{childEduArr}}" range-key='text'>
+        <view class='picker-show'>{{childEduArr[childEduArrIndex].text}}</view>
+      </picker>
+    </view>
+
+    <view class='mt-10 width-50'>
+      <label class='form-label'>继续教育：</label>
+      <picker class='form-wrapper' data-type='continueEdu' bindchange='bindSelectChange' value="{{continueEduArrIndex}}" range="{{continueEduArr}}" range-key='text'>
+        <view class='picker-show'>{{continueEduArr[continueEduArrIndex].text}}</view>
+      </picker>
+    </view>
+
+    <view class='mt-10 width-50'>
+      <label class='form-label'>大病医疗：</label>
+      <input class='form-wrapper' type='number'></input>
+    </view>
+
+    <view class='mt-10 width-50'>
+      <label class='form-label'>贷款利息：</label>
+      <picker class='form-wrapper' data-type='loan' bindchange='bindSelectChange' value="{{loanArrIndex}}" range="{{loanArr}}" range-key='text'>
+        <view class='picker-show'>{{loanArr[loanArrIndex].text}}</view>
+      </picker>
+    </view>
+
+    <view class='mt-10 width-50'>
+      <label class='form-label'>住房租金：</label>
+      <picker class='form-wrapper' data-type='rent' bindchange='bindSelectChange' value="{{rentArrIndex}}" range="{{rentArr}}" range-key='text'>
+        <view class='picker-show'>{{rentArr[rentArrIndex].text}}</view>
+      </picker>
+    </view>
+
+    <view class='mt-10 width-50'>
+      <label class='form-label'>赡养老人：</label>
+      <picker class='form-wrapper' data-type='support' bindchange='bindSelectChange' value="{{supportArrIndex}}" range="{{supportArr}}" range-key='text'>
+        <view class='picker-show'>{{supportArr[supportArrIndex].text}}</view>
+      </picker>
+    </view>
+  </view>
+</view>

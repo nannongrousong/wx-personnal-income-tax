@@ -3,7 +3,7 @@
   <view>
     <text>社保汇缴基数（下限）</text>
     <view class='display-flex'>
-      <input class='row width-50' placeholder='3000' disabled='{{ !socialChecked }}' ></input>
+      <input class='row width-50' placeholder='3000' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' disabled='{{ !socialChecked }}' ></input>
       <checkbox class='row width-50' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
     </view>
   </view>
@@ -11,7 +11,7 @@
   <view>
     <text>公积金汇缴基数（下限）</text>
     <view class='display-flex'>
-      <input class='row width-50' placeholder='5000' disabled='{{ !fundChecked }}'></input>
+      <input class='row width-50' placeholder='5000' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' disabled='{{ !fundChecked }}'></input>
       <checkbox class='row width-50' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
     </view>
   </view>

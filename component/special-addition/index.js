@@ -1,87 +1,108 @@
+const childEduArr = [{
+  value: 0,
+  text: 0
+}, {
+  value: 1000,
+  text: 1000
+}];
+const continueEduArr = [{
+  value: 1,
+  text: '400（月扣）'
+}, {
+  value: 2,
+  text: '3600（年扣）',
+}];
+const loanArr = [{
+  value: 0,
+  text: 0
+}, {
+  value: 1000,
+  text: 1000
+}];
+const rentArr = [{
+  value: 0,
+  text: 0
+}, {
+  value: 800,
+  text: 800
+}, {
+  value: 1100,
+  text: 1100
+}, {
+  value: 1500,
+  text: 1500
+}];
+const supportArr = [{
+  value: 0,
+  text: 0
+}, {
+  value: 1000,
+  text: 1000
+}, {
+  value: 2000,
+  text: 2000
+}];
+
 Component({
   properties: {
-    label: {
-      type: String,
-      value: ''
-    },
-    source: {
-      type: Array,
-      value: []
-    },
-    removeBarrage: {
-      type: Function,
+    formData: {
+      type: Object,
+      value: {},
+      observer: function(newVal, oldVal, changedPath) {
+        const {
+          formData
+        } = this.properties;
+        const {
+          childEduArrIndex = 0,
+          continueEduArrIndex = 0,
+          loanArrIndex = 0,
+          rentArrIndex = 0,
+          supportArrIndex = 0,
+          bigSick = 0
+        } = formData;
+        this.setData({
+          formData,
+          childEduArrIndex,
+          continueEduArrIndex,
+          loanArrIndex,
+          rentArrIndex,
+          supportArrIndex,
+          bigSick
+        });
+      }
     }
   },
   data: {
-    childEduArr: [{
-      value: 0,
-      text: 0
-    }, {
-      value: 1000,
-      text: 1000
-    }],
+    childEduArr,
     childEduArrIndex: 0,
-    continueEduArr: [{
-        value: 1,
-        text: '400（月扣）'
-      },
-      {
-        value: 2,
-        text: '3600（年扣）',
-      }
-    ],
+    continueEduArr,
     continueEduArrIndex: 0,
-    loanArr: [{
-      value: 0,
-      text: 0
-    }, {
-      value: 1000,
-      text: 1000
-    }],
+    loanArr,
     loanArrIndex: 0,
-    rentArr: [{
-      value: 0,
-      text: 0
-    }, {
-      value: 800,
-      text: 800
-    }, {
-      value: 1100,
-      text: 1100
-    }, {
-      value: 1500,
-      text: 1500
-    }],
+    rentArr,
     rentArrIndex: 0,
-    supportArr: [{
-      value: 0,
-      text: 0
-    }, {
-      value: 1000,
-      text: 1000
-    }, {
-      value: 2000,
-      text: 2000
-    }],
-    supportArrIndex: 0
+    supportArr,
+    supportArrIndex: 0,
+    bigSick: 0
   },
   methods: {
-    onLoad: function() {
-      console.log('onload')
-    },
     bindSelectChange: function(e) {
       const {
         type
       } = e.target.dataset;
-      this.setData({
-        [`${type}ArrIndex`]: e.detail.value
-      });
+      if (type == 'bigSick') {
+        
+        this.triggerEvent('FormData', {
+          [type]: e.detail.value <= 80000 ? e.detail.value : 80000
+        });
+      } else {
+        this.triggerEvent('FormData', {
+          [`${type}ArrIndex`]: e.detail.value
+        });
+      }
     }
   },
   ready: function() {
-    this.setData({
-      label: this.properties.label,
-      source: this.properties.source
-    })
+
   }
 })

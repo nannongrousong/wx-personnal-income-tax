@@ -14,7 +14,12 @@ Component({
   properties: {
     area: {
       type: String,
-      value: ''
+      value: '',
+      observer: function (newVal, oldVal, changedPath) {
+        this.setData({
+          areaArrIndex: areas.findIndex((item) => item.value == newVal)
+        });
+      }
     },
     grossPay: {
       type: Number,
@@ -26,20 +31,20 @@ Component({
     areaArrIndex: 0
   },
   methods: {
-    onLoad: function() {
-      console.log('onload')
-    },
     bindAreaChange: function(e) {
-      this.setData({
-        areaArrIndex: e.detail.value
-      });
-      this.triggerEvent('AreaChange', e.detail.value);
+      this.triggerEvent('AreaChange', areas[e.detail.value].value);
     },
     bindPayInput: function(e) {
-      this.triggerEvent('GrossPayChange', e.detail.value);
+      this.triggerEvent('PayChange', e.detail.value);
     }
   },
   ready: function() {
-
+    const {
+      area, grossPay
+    } = this.properties;
+    this.setData({
+      area,
+      grossPay
+    });
   }
 });

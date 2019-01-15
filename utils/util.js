@@ -1,11 +1,7 @@
-const justShowInfo = (content) => {
-
-};
-
 const socialFundBase = [{
   value: 'beijing',
   text: '北京',
-  socail: {
+  social: {
     min: 5080,
     max: 25401
   },
@@ -16,7 +12,7 @@ const socialFundBase = [{
 }, {
   value: 'shanghai',
   text: '上海',
-  socail: {
+  social: {
     min: 4279,
     max: 21396
   },
@@ -27,7 +23,7 @@ const socialFundBase = [{
 }, {
   value: 'nanjing',
   text: '南京',
-  socail: {
+  social: {
     min: 3030,
     max: 19935
   },
@@ -37,7 +33,11 @@ const socialFundBase = [{
   }
 }];
 
+const getSocialFund = (city) => {
+  return socialFundBase.find((item) => item.value == city);
+};
+
 module.exports = {
-  justShowInfo,
-  socialFundBase
+  socialFundBase,
+  getSocialFund
 }

@@ -3,6 +3,6 @@
     <view class='row'>{{areaArr[areaArrIndex].text}}</view>
   </picker>
 
-  <input style='flex: 5' bindinput='bindPayInput' placeholder='税前工资' type='number' placeholder='税前工资'></input>
+  <input style='flex: 5' bindinput='bindPayInput' placeholder='税前工资' type='number' value='{{ grossPay }}' placeholder='税前工资'></input>
   <view class='row' style='flex: 2'>计算</view>
 </view>

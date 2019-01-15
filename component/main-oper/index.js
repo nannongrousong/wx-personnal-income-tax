@@ -1,6 +1,6 @@
 const {
   socialFundBase
-} = require('../../utils/util.js');
+} = require('../../utils/baseData.js');
 
 const areas = socialFundBase.map(({
   value,

@@ -8,7 +8,7 @@ const suppleFundArr = Array(13).fill(0).map((v, index) => ({
 }));
 const {
   getSocialFund
-} = require('../../utils/util.js');
+} = require('../../utils/baseData.js');
 const computeShow = (pay, base) => {
   if (pay <= base.min) {
     return base.min;

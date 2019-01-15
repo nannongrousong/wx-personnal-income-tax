@@ -1,54 +1,17 @@
-const childEduArr = [{
-  value: 0,
-  text: 0
-}, {
-  value: 1000,
-  text: 1000
-}];
-const continueEduArr = [{
-  value: 1,
-  text: '400（月扣）'
-}, {
-  value: 2,
-  text: '3600（年扣）',
-}];
-const loanArr = [{
-  value: 0,
-  text: 0
-}, {
-  value: 1000,
-  text: 1000
-}];
-const rentArr = [{
-  value: 0,
-  text: 0
-}, {
-  value: 800,
-  text: 800
-}, {
-  value: 1100,
-  text: 1100
-}, {
-  value: 1500,
-  text: 1500
-}];
-const supportArr = [{
-  value: 0,
-  text: 0
-}, {
-  value: 1000,
-  text: 1000
-}, {
-  value: 2000,
-  text: 2000
-}];
+const {
+  childEduArr,
+  continueEduArr,
+  loanArr,
+  rentArr,
+  supportArr
+} = require('../../utils/baseData.js');
 
 Component({
   properties: {
     formData: {
       type: Object,
       value: {},
-      observer: function(newVal, oldVal, changedPath) {
+      observer: function (newVal, oldVal, changedPath) {
         const {
           formData
         } = this.properties;
@@ -86,12 +49,12 @@ Component({
     bigSick: 0
   },
   methods: {
-    bindSelectChange: function(e) {
+    bindSelectChange: function (e) {
       const {
         type
       } = e.target.dataset;
       if (type == 'bigSick') {
-        
+
         this.triggerEvent('FormData', {
           [type]: e.detail.value <= 80000 ? e.detail.value : 80000
         });
@@ -102,7 +65,7 @@ Component({
       }
     }
   },
-  ready: function() {
+  ready: function () {
 
   }
 })

@@ -1,10 +1,8 @@
 <view class="container">
   <view style='height: 20rpx;'></view>
-  <!-->
-  
-  <main-oper area='{{ area }}' grossPay='{{ grossPay }}' bindAreaChange='bindAreaChange' bindPayChange='bindPayChange'></main-oper>
-  <base-insurance area='{{ area }}' grossPay='{{ grossPay }}' bindFormData='bindFormData' formData='{{ formData }}'></base-insurance>
-  <-->
-    <special-addition bindFormData='bindFormData' formData='{{ formData }}'></special-addition>
 
+  <main-oper area='{{ area }}' grossPay='{{ grossPay }}' bindAreaChange='bindAreaChange' bindPayChange='bindPayChange' bindCompute='bindCompute'></main-oper>
+  <base-insurance area='{{ area }}' grossPay='{{ grossPay }}' bindFormData='bindFormData' formData='{{ formData }}'></base-insurance>
+  <special-addition bindFormData='bindFormData' formData='{{ formData }}'></special-addition>
+  <pay-detail payDetail='{{ payDetail }}'></pay-detail>
 </view>

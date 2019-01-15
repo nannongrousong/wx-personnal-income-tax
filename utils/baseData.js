@@ -8,6 +8,13 @@ const socialFundBase = [{
   fund: {
     min: 2273,
     max: 25401
+  },
+  insurance: {
+    yanglao: [8, 19],
+    yiliao: [2, 10],
+    shiye: [0.2, 0.8],
+    gongshang: 0.4,
+    shengyu: 0.8
   }
 }, {
   value: 'shanghai',
@@ -19,6 +26,13 @@ const socialFundBase = [{
   fund: {
     min: 2300,
     max: 21400
+  },
+  insurance: {
+    yanglao: [8, 20],
+    yiliao: [2, 9.5],
+    shiye: [0.5, 0.5],
+    gongshang: 0.2,
+    shengyu: 1
   }
 }, {
   value: 'nanjing',
@@ -30,6 +44,13 @@ const socialFundBase = [{
   fund: {
     min: 2020,
     max: 25300
+  },
+  insurance: {
+    yanglao: [8, 19],
+    yiliao: [2, 9],
+    shiye: [0.5, 0.5],
+    gongshang: 0.2,
+    shengyu: 0.8
   }
 }];
 

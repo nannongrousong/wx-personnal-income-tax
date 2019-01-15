@@ -4,5 +4,5 @@
   </picker>
 
   <input style='flex: 5' bindinput='bindPayInput' placeholder='税前工资' type='number' value='{{ grossPay }}' placeholder='税前工资'></input>
-  <view class='row' style='flex: 2'>计算</view>
+  <view class='row' style='flex: 2' bindtap='bindCompute'>计算</view>
 </view>

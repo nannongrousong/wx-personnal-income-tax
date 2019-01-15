@@ -1,0 +1,11 @@
+@import "/style/common.wxss";
+
+.flex-1 {
+  flex: 1;
+}
+
+.row {
+  border-top: 1px solid red;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+}

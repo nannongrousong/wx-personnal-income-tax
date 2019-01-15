@@ -1,0 +1,18 @@
+<view class='wrapper'>
+  <view class='title'>五险一金汇缴明细</view>
+  <view class='display-flex'>
+    <view class='flex-1'></view>
+    <view class='flex-1 text-right'>个人应缴部分</view>
+    <view class='flex-1 text-right'>单位应缴部分</view>
+  </view>
+  <block wx:for="{{ payDetail }}" wx:key='id'>
+    <view class='display-flex row'>
+      <view class='flex-1'>{{ item.type }}</view>
+      <view class='flex-1 text-right'>{{item.person}}</view>
+      <view class='flex-1 text-right'>{{item.company}}</view>
+    </view>
+  </block>
+
+  <view class='title'>个人所得税缴纳明细</view>
+  
+</view>

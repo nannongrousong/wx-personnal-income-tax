@@ -36,6 +36,9 @@ Component({
     },
     bindPayInput: function(e) {
       this.triggerEvent('PayChange', e.detail.value);
+    },
+    bindCompute: function(e) {
+      this.triggerEvent('Compute');
     }
   },
   ready: function() {

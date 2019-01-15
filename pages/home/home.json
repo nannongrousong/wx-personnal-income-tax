@@ -3,6 +3,7 @@
   "usingComponents": {
     "special-addition": "/component/special-addition/index",
     "base-insurance": "/component/base-insurance/index",
-    "main-oper": "/component/main-oper/index"
+    "main-oper": "/component/main-oper/index",
+    "pay-detail": "/component/pay-detail/index"
   }
 }

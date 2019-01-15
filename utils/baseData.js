@@ -1,14 +1,8 @@
 const socialFundBase = [{
   value: 'beijing',
   text: '北京',
-  social: {
-    min: 5080,
-    max: 25401
-  },
-  fund: {
-    min: 2273,
-    max: 25401
-  },
+  social: [5080, 25401],
+  fund: [2273, 25401],
   insurance: {
     yanglao: [8, 19],
     yiliao: [2, 10],
@@ -19,14 +13,8 @@ const socialFundBase = [{
 }, {
   value: 'shanghai',
   text: '上海',
-  social: {
-    min: 4279,
-    max: 21396
-  },
-  fund: {
-    min: 2300,
-    max: 21400
-  },
+  social: [4279, 21396],
+  fund: [2300, 21400],
   insurance: {
     yanglao: [8, 20],
     yiliao: [2, 9.5],
@@ -37,14 +25,8 @@ const socialFundBase = [{
 }, {
   value: 'nanjing',
   text: '南京',
-  social: {
-    min: 3030,
-    max: 19935
-  },
-  fund: {
-    min: 2020,
-    max: 25300
-  },
+  social: [3030, 19935],
+  fund: [2020, 25300],
   insurance: {
     yanglao: [8, 19],
     yiliao: [2, 9],

@@ -33,6 +33,7 @@ Component({
   methods: {
     bindAreaChange: function(e) {
       this.triggerEvent('AreaChange', areas[e.detail.value].value);
+      this.triggerEvent('PayChange', 0);
     },
     bindPayInput: function(e) {
       this.triggerEvent('PayChange', e.detail.value);

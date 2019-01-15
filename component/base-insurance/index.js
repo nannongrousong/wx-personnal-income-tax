@@ -10,10 +10,10 @@ const {
   getSocialFund
 } = require('../../utils/baseData.js');
 const computeShow = (pay, base) => {
-  if (pay <= base.min) {
-    return base.min;
-  } else if (pay >= base.max) {
-    return base.max;
+  if (pay <= base[0]) {
+    return base[0];
+  } else if (pay >= base[1]) {
+    return base[1];
   } else {
     return pay;
   }
@@ -127,8 +127,8 @@ Component({
     });
 
     this.triggerEvent('FormData', {
-      socialShow: social.min,
-      fundShow: fund.min
+      socialShow: social[0],
+      fundShow: fund[0]
     });
   }
 })

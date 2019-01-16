@@ -149,21 +149,30 @@ Page({
     //  纳税详情
     const taxDetail = Array(12).fill(0).map((item, index) => {
       const month = index + 1;
-      //  应税工资
-      let shouldTax = grossPay * month - 5000 * month - personCostAll * month - childEduM * month - loanM * month - rentM * month - supportM * month;
+      //  总工资
+      const grossPayAll = grossPay * month;
+      //  总享受的基本优惠额度
+      const basePreferAll = 5000 * month;
+      //  总五险一金
+      const insuFundAll = personCostAll * month;
+      //  专项附加扣除(子女教育、贷款、租房、赡养老人)
+      let specailOffAll = (childEduM + loanM + rentM + supportM) * month;
+
       //  继续教育3600定额默认放到12月份扣，争取最大优惠
       if (month == 12 && continueEduM == 3600) {
-        shouldTax -= continueEduM;
+        specailOffAll += continueEduM;
       }
-
       if (continueEduM == 400) {
-        shouldTax -= continueEduM * month;
+        specailOffAll += continueEduM * month;
       }
 
       //  大病医疗在每年3.1到6.30，默认放到6月，争取最大优惠
       if (month == 6) {
-        shouldTax -= bigSick;
+        specailOffAll += bigSick;
       }
+
+      //  应税工资
+      let shouldTax = grossPayAll - basePreferAll - insuFundAll - specailOffAll;
 
       const { taxRatio, baseOff } = computeTax(shouldTax);
       const monthTax = shouldTax * taxRatio * 0.01 - baseOff - taxCost;

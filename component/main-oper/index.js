@@ -22,8 +22,8 @@ Component({
       }
     },
     grossPay: {
-      type: Number,
-      value: 0
+      type: String,
+      value: ''
     }
   },
   data: {
@@ -33,7 +33,7 @@ Component({
   methods: {
     bindAreaChange: function(e) {
       this.triggerEvent('AreaChange', areas[e.detail.value].value);
-      this.triggerEvent('PayChange', 0);
+      this.triggerEvent('PayChange', '');
     },
     bindPayInput: function(e) {
       this.triggerEvent('PayChange', e.detail.value);

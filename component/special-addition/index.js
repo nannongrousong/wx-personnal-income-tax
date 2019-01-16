@@ -11,17 +11,17 @@ Component({
     formData: {
       type: Object,
       value: {},
-      observer: function (newVal, oldVal, changedPath) {
+      observer: function(newVal, oldVal, changedPath) {
         const {
           formData
         } = this.properties;
         const {
           childEduArrIndex = 0,
-          continueEduArrIndex = 0,
-          loanArrIndex = 0,
-          rentArrIndex = 0,
-          supportArrIndex = 0,
-          bigSick = 0
+            continueEduArrIndex = 0,
+            loanArrIndex = 0,
+            rentArrIndex = 0,
+            supportArrIndex = 0,
+            bigSick = 0
         } = formData;
         this.setData({
           formData,
@@ -49,23 +49,33 @@ Component({
     bigSick: 0
   },
   methods: {
-    bindSelectChange: function (e) {
+    bindSelectChange: function(e) {
       const {
         type
       } = e.target.dataset;
       if (type == 'bigSick') {
-
         this.triggerEvent('FormData', {
           [type]: e.detail.value <= 80000 ? e.detail.value : 80000
         });
       } else {
-        this.triggerEvent('FormData', {
+        let updateData = {
           [`${type}ArrIndex`]: e.detail.value
-        });
+        };
+
+        //  贷款和住房租金 只能享受一个
+        if (type == 'loan') {
+          updateData.rentArrIndex = 0;
+        }
+
+        if (type == 'rent') {
+          updateData.loanArrIndex = 0;
+        }
+
+        this.triggerEvent('FormData', updateData);
       }
     }
   },
-  ready: function () {
+  ready: function() {
 
   }
 })

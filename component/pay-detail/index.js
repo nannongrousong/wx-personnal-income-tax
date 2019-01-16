@@ -1,32 +1,29 @@
-const {
-
-} = require('../../utils/baseData.js');
-
 Component({
   properties: {
-    formData: {
-      type: Object,
-      value: {}
-    },
     payDetail: {
+      type: Array,
+      value: []
+    },
+    taxDetail: {
       type: Array,
       value: []
     }
   },
   data: {
-    payDetail: []
+    payDetail: [],
+    taxDetail: []
   },
   methods: {
-    bindSelectChange: function(e) {
 
-    }
   },
   ready: function() {
     const {
-      payDetail
+      payDetail,
+      taxDetail
     } = this.properties;
     this.setData({
-      payDetail
+      payDetail,
+      taxDetail
     });
   }
 })

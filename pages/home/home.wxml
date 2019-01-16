@@ -4,5 +4,5 @@
   <main-oper area='{{ area }}' grossPay='{{ grossPay }}' bindAreaChange='bindAreaChange' bindPayChange='bindPayChange' bindCompute='bindCompute'></main-oper>
   <base-insurance area='{{ area }}' grossPay='{{ grossPay }}' bindFormData='bindFormData' formData='{{ formData }}'></base-insurance>
   <special-addition bindFormData='bindFormData' formData='{{ formData }}'></special-addition>
-  <pay-detail payDetail='{{ payDetail }}'></pay-detail>
+  <pay-detail payDetail='{{ payDetail }}'  taxDetail='{{ taxDetail }}'></pay-detail>
 </view>

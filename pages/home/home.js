@@ -23,7 +23,7 @@ Page({
 
     },
     payDetail: [],
-    taxDetai: []
+    taxDetail: []
   },
   bindAreaChange: function (e) {
     this.setData({
@@ -101,8 +101,8 @@ Page({
       suppleFund: [showMoney(fundShow * suppleFundArrIndex * 0.01), suppleFundArrIndex]
     };
 
-    const personCostAll = Object.keys(personCost).reduce((prev, curr) => (prev + personCost[curr][0]), 0);
-    const companyCostAll = Object.keys(companyCost).reduce((prev, curr) => (prev + companyCost[curr][0]), 0);
+    const personCostAll = Object.keys(personCost).reduce((prev, curr) => (prev + Number(personCost[curr][0])), 0);
+    const companyCostAll = Object.keys(companyCost).reduce((prev, curr) => (prev + Number(companyCost[curr][0])), 0);
 
     const payDetailMap = {
       yanglao: '养老保险',
@@ -126,18 +126,15 @@ Page({
     payDetail.push({
       id: payDetail.length,
       type: '共计支出',
-      person: personCostAll,
-      company: companyCostAll
+      person: showMoney(personCostAll),
+      company: showMoney(companyCostAll)
     });
 
     this.setData({
       payDetail
     });
 
-
-
-    //  应税工资
-    const shouldTax = Number(grossPay) - personCostAll;
+    console.log('payDetail', payDetail)
 
     //  附加扣除[子女教育（月扣）、继续教育（月扣400，年扣3600）、大病医疗（年扣最高80000）、贷款利息（月扣1000）、住房租金（月扣）、赡养老人（月扣）]    
 
@@ -152,6 +149,7 @@ Page({
     //  纳税详情
     const taxDetail = Array(12).fill(0).map((item, index) => {
       const month = index + 1;
+      //  应税工资
       let shouldTax = grossPay * month - 5000 * month - personCostAll * month - childEduM * month - loanM * month - rentM * month - supportM * month;
       //  继续教育3600定额默认放到12月份扣，争取最大优惠
       if (month == 12 && continueEduM == 3600) {
@@ -172,9 +170,15 @@ Page({
       taxCost += monthTax;
 
       return {
+        id: index,
+        month: `${index + 1}月`,
         tax: showMoney(monthTax),
-        realLef: showMoney(grossPay - monthTax - personCostAll)
+        realLeft: showMoney(grossPay - monthTax - personCostAll)
       };
+    });
+
+    this.setData({
+      taxDetail
     });
 
     console.log('taxDetail', taxDetail);
@@ -183,7 +187,7 @@ Page({
 
   },
   onLoad: function (options) {
-    
+
 
 
   },

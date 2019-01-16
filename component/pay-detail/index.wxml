@@ -14,5 +14,17 @@
   </block>
 
   <view class='title'>个人所得税缴纳明细</view>
+  <view class='display-flex'>
+    <view class='flex-1'>月份</view>
+    <view class='flex-1 text-right'>扣除税</view>
+    <view class='flex-1 text-right'>到手收入</view>
+  </view>
+  <block wx:for="{{ taxDetail }}" wx:key='id'>
+    <view class='display-flex row'>
+      <view class='flex-1'>{{ item.month }}</view>
+      <view class='flex-1 text-right'>{{item.tax}}</view>
+      <view class='flex-1 text-right'>{{item.realLeft}}</view>
+    </view>
+  </block>
   
 </view>

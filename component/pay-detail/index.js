@@ -14,7 +14,16 @@ Component({
     taxDetail: []
   },
   methods: {
-
+    bindShowDetail: function(e) {
+      const {
+        detail
+      } = e.target.dataset;
+      wx.showModal({
+        content: detail,
+        showCancel: false,
+        confirmText: '确定'
+      })
+    }
   },
   ready: function() {
     const {

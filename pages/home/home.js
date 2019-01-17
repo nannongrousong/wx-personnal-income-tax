@@ -172,17 +172,23 @@ Page({
       }
 
       //  应税工资
-      let shouldTax = grossPayAll - basePreferAll - insuFundAll - specailOffAll;
+      let shouldTax = showMoney(grossPayAll - basePreferAll - insuFundAll - specailOffAll);
 
       const { taxRatio, baseOff } = computeTax(shouldTax);
-      const monthTax = shouldTax * taxRatio * 0.01 - baseOff - taxCost;
+      const monthTax = showMoney(shouldTax * taxRatio * 0.01 - baseOff - taxCost);
+      //  税后收入
+      const netPay = showMoney(grossPay - monthTax - personCostAll);
       taxCost += monthTax;
 
       return {
         id: index,
         month: `${index + 1}月`,
-        tax: showMoney(monthTax),
-        realLeft: showMoney(grossPay - monthTax - personCostAll)
+        tax: monthTax,
+        taxFormula: `${shouldTax}(应税工资) = ${grossPayAll}(总收入) - ${basePreferAll}(总免征额度) - ${insuFundAll}(总五险一金缴纳) - ${specailOffAll}(总专项扣除);\r\n
+          ${monthTax}(税) = ${shouldTax}(应税工资) * ${taxRatio}%(预扣率) - ${baseOff}(速算扣除数) - ${taxCost}(总缴纳税).
+        `,
+        realLeft: netPay,
+        realLeftFormula: `${netPay}(税后收入) = ${grossPay}(税前总收入) - ${monthTax}(每月税) - ${personCostAll}(五险一金).`
       };
     });
 

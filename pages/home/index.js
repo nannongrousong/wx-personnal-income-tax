@@ -158,12 +158,19 @@ Page({
       //  专项附加扣除(子女教育、贷款、租房、赡养老人)
       let specailOffAll = (childEduM + loanM + rentM + supportM) * month;
 
-      //  继续教育3600定额默认放到12月份扣，争取最大优惠
-      if (month == 12 && continueEduM == 3600) {
-        specailOffAll += continueEduM;
-      }
+      //  继续教育
       if (continueEduM == 400) {
+        //  学历教育，每月扣
         specailOffAll += continueEduM * month;
+      } else if (continueEduM == 3600 && month == 12) {
+        //  职业资格教育，年度只扣一次，默认放到12月份扣，争取最大优惠
+        specailOffAll += continueEduM;
+      } else {
+        //  学历教育+职业资格教育
+        specailOffAll += 400 * month;
+        if (month == 12) {
+          specailOffAll += 3600;
+        }
       }
 
       //  大病医疗在每年3.1到6.30，默认放到6月，争取最大优惠
@@ -182,7 +189,7 @@ Page({
       //  税后收入
       const netPay = grossPay - monthTax - personCostAll;
       //  年度总缴纳税
-      taxCost +=  monthTax;
+      taxCost += monthTax;
 
       return {
         id: index,

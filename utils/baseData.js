@@ -513,59 +513,88 @@ const getSocialFund = (city) => {
 
 const childEduArr = [{
   value: 0,
-  text: 0
+  label: '无',
+  text: '无'
 }, {
   value: 500,
-  text: 500
+  label: '500/月',
+  text: '1子女，双方扣除'
 }, {
   value: 1000,
-  text: 1000
+  label: '1000/月',
+  text: '1子女，本人扣除或2子女，双方扣除'
 }, {
   value: 1500,
-  text: 1500
+  label: '1500/月',
+  text: '3子女，双方扣除'
 }, {
   value: 2000,
-  text: 2000
+  label: '2000/月',
+  text: '2子女，本人扣除或4子女，双方扣除'
+}, {
+  value: 3000,
+  label: '3000/月',
+  text: '3子女，本人扣除或6子女，双方扣除'
 }];
 const continueEduArr = [{
   value: 0,
-  text: 0,
+  label: '无',
+  text: '无',
 }, {
   value: 400,
-  text: '400（月扣）'
+  label: '400/月',
+  text: '学历（学位）教育'
 }, {
   value: 3600,
-  text: '3600（年扣）',
+  label: '3600/年',
+  text: '职业资格继续教育',
+}, {
+  value: 4000,
+  label: '400/月 + 3600/年',
+  text: '学历（学位）教育 + 职业资格继续教育',
 }];
 const loanArr = [{
   value: 0,
-  text: 0
+  label: '无',
+  text: '无'
+}, {
+  value: 500,
+  label: '500/月',
+  text: '夫妻双方共同扣除'
 }, {
   value: 1000,
-  text: 1000
+  label: '1000/月',
+  text: '本人扣除'
 }];
 const rentArr = [{
   value: 0,
-  text: 0
+  label: '无',
+  text: '无'
 }, {
   value: 800,
-  text: 800
+  label: '800/月',
+  text: '人口不超过100万城市'
 }, {
   value: 1100,
-  text: 1100
+  label: '1100/月',
+  text: '人口超过100万城市'
 }, {
   value: 1500,
-  text: 1500
+  label: '1500/月',
+  text: '直辖市、省会（首府）、计划单列市'
 }];
 const supportArr = [{
   value: 0,
-  text: 0
+  label: '无',
+  text: '无'
 }, {
   value: 1000,
-  text: 1000
+  label: '1000/月',
+  text: '非独生子女'
 }, {
   value: 2000,
-  text: 2000
+  label: '2000/月',
+  text: '独生子女'
 }];
 const taxRatioMap = [{
   level: 1,

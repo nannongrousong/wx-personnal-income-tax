@@ -1,0 +1,16 @@
+<view class='wrapper'>  
+  <view class='display-flex row tax-table table-header'>
+    <view class='col1'>级数</view>
+    <view class='col2'>累计预扣预缴应纳税所得额</view>
+    <view class='col3 text-right'>预扣率</view>
+    <view class='col4 text-right'>速算扣除数</view>
+  </view>
+  <block wx:for="{{ taxRatio }}" wx:key='level'>
+    <view class='display-flex row table-content'>
+      <view class='col1'>{{ item.level }}</view>
+      <view class='col2'>{{ item.shouldTax }}</view>
+      <view class='col3 text-right'>{{ item.preOffRatio }}</view>
+      <view class='col4 text-right'>{{ item.baseOff }}</view>
+    </view>
+  </block>
+</view>

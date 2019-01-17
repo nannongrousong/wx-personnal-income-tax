@@ -1,0 +1,30 @@
+@import "/style/common.wxss";
+
+.tax-table {
+  margin-top: 30rpx;
+}
+
+.table-header {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.row {
+  border-bottom: 1px solid rgba(224, 224, 224, 1);  
+  padding: 20rpx 0;
+}
+
+.col1 {
+  width: 10%;
+}
+
+.col2 {
+  width: 50%;
+}
+
+.col3 {
+  width: 18%;
+}
+
+.col4 {
+  width: 22%;
+}

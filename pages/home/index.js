@@ -203,8 +203,6 @@ Page({
   },
   onLoad: function (options) {
 
-
-
   },
   onHide: function () {
 

@@ -567,6 +567,42 @@ const supportArr = [{
   value: 2000,
   text: 2000
 }];
+const taxRatioMap = [{
+  level: 1,
+  shouldTax: [0, 36000],
+  preOffRatio: 3,
+  baseOff: 0
+}, {
+  level: 2,
+  shouldTax: [36000, 144000],
+  preOffRatio: 10,
+  baseOff: 2520
+}, {
+  level: 3,
+  shouldTax: [144000, 300000],
+  preOffRatio: 20,
+  baseOff: 16920
+}, {
+  level: 4,
+  shouldTax: [300000, 420000],
+  preOffRatio: 25,
+  baseOff: 31920
+}, {
+  level: 5,
+  shouldTax: [420000, 660000],
+  preOffRatio: 30,
+  baseOff: 52920
+}, {
+  level: 6,
+  shouldTax: [660000, 960000],
+  preOffRatio: 35,
+  baseOff: 85920
+}, {
+  level: 7,
+  shouldTax: [960000, Infinity],
+  preOffRatio: 45,
+  baseOff: 181920
+}]
 
 module.exports = {
   socialFundBase,
@@ -575,5 +611,6 @@ module.exports = {
   continueEduArr,
   loanArr,
   rentArr,
-  supportArr
+  supportArr,
+  taxRatioMap
 }

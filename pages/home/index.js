@@ -134,7 +134,7 @@ Page({
       payDetail
     });
 
-    console.log('payDetail', payDetail)
+    console.log('payDetail', payDetail);
 
     //  附加扣除[子女教育（月扣）、继续教育（月扣400，年扣3600）、大病医疗（年扣最高80000）、贷款利息（月扣1000）、住房租金（月扣）、赡养老人（月扣）]    
 
@@ -172,23 +172,27 @@ Page({
       }
 
       //  应税工资
-      let shouldTax = showMoney(grossPayAll - basePreferAll - insuFundAll - specailOffAll);
-
+      let shouldTax = grossPayAll - basePreferAll - insuFundAll - specailOffAll;
+      if (shouldTax <= 0) {
+        shouldTax = 0;
+      }
+      //  根据应税工资获取 预扣率和速算扣除数
       const { taxRatio, baseOff } = computeTax(shouldTax);
-      const monthTax = showMoney(shouldTax * taxRatio * 0.01 - baseOff - taxCost);
+      const monthTax = shouldTax * taxRatio * 0.01 - baseOff - taxCost;
       //  税后收入
-      const netPay = showMoney(grossPay - monthTax - personCostAll);
-      taxCost += monthTax;
+      const netPay = grossPay - monthTax - personCostAll;
+      //  年度总缴纳税
+      taxCost +=  monthTax;
 
       return {
         id: index,
         month: `${index + 1}月`,
-        tax: monthTax,
-        taxFormula: `${shouldTax}(应税工资) = ${grossPayAll}(总收入) - ${basePreferAll}(总免征额度) - ${insuFundAll}(总五险一金缴纳) - ${specailOffAll}(总专项扣除);\r\n
-          ${monthTax}(税) = ${shouldTax}(应税工资) * ${taxRatio}%(预扣率) - ${baseOff}(速算扣除数) - ${taxCost}(总缴纳税).
+        tax: showMoney(monthTax),
+        taxFormula: `${showMoney(shouldTax)}(月应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免征额度) - ${showMoney(insuFundAll)}(累计缴纳五险一金) - ${showMoney(specailOffAll)}(累计专项扣除);\r\n
+          ${showMoney(monthTax)}(月扣除税) = ${showMoney(shouldTax)}(月应税工资) * ${showMoney(taxRatio)}%(预扣率) - ${showMoney(baseOff)}(速算扣除数) - ${showMoney(taxCost)}(累计扣除税).
         `,
-        realLeft: netPay,
-        realLeftFormula: `${netPay}(税后收入) = ${grossPay}(税前总收入) - ${monthTax}(每月税) - ${personCostAll}(五险一金).`
+        realLeft: showMoney(netPay),
+        realLeftFormula: `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax)}(月扣除税) - ${showMoney(personCostAll)}(月缴纳五险一金).`
       };
     });
 

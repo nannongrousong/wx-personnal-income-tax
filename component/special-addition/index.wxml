@@ -2,49 +2,54 @@
   <view class='title'>专项附加扣除</view>
 
   <view style='width: 100%'>
-    <view class='mt-10'>
-      <label class='form-label'>子女教育：</label>
-      <icon data-type='childEdu' bindtap='bindShowIntro' type='info'></icon>
+    <view class='mt-10 row'>
+      <label class='form-label'>子女教育</label>
+      <icon class='form-icon' data-type='childEdu' bindtap='bindShowIntro' type='info'></icon>
       <picker class='form-wrapper' data-type='childEdu' bindchange='bindSelectChange' value="{{childEduArrIndex}}" range="{{childEduArr}}" range-key='text'>
-        <view class='picker-show'>{{childEduArr[childEduArrIndex].label}}</view>
+        <view>{{childEduArr[childEduArrIndex].label}}</view>
+        <view class='select-arrow'></view>
       </picker>
     </view>
 
-    <view class='mt-10'>
-      <label class='form-label'>继续教育：</label>
-      <icon data-type='continueEdu' bindtap='bindShowIntro' type='info'></icon>
+    <view class='mt-10 row'>
+      <label class='form-label'>继续教育</label>
+      <icon class='form-icon' data-type='continueEdu' bindtap='bindShowIntro' type='info'></icon>
       <picker class='form-wrapper' data-type='continueEdu' bindchange='bindSelectChange' value="{{continueEduArrIndex}}" range="{{continueEduArr}}" range-key='text'>
-        <view class='picker-show'>{{continueEduArr[continueEduArrIndex].label}}</view>
+        <view>{{continueEduArr[continueEduArrIndex].label}}</view>
+        <view class='select-arrow'></view>
       </picker>
     </view>
 
-    <view class='mt-10'>
-      <label class='form-label'>大病医疗：</label>
-      <icon data-type='bigSick' bindtap='bindShowIntro' type='info'></icon>
-      <input class='form-wrapper' type='number' data-type='bigSick' value='{{ bigSick }}' bindinput='bindSelectChange' placeholder='不超过8万' ></input>
+    <view class='mt-10 row'>
+      <label class='form-label'>大病医疗</label>
+      <icon class='form-icon' data-type='bigSick' bindtap='bindShowIntro' type='info'></icon>
+      <input class='form-wrapper' type='number' data-type='bigSick' value='{{ bigSick }}' bindinput='bindSelectChange' placeholder='不超过8万'></input>
     </view>
 
-    <view class='mt-10'>
-      <label class='form-label'>贷款利息：</label>
-      <icon data-type='loan' bindtap='bindShowIntro' type='info'></icon>
+    <view class='mt-10 row'>
+      <label class='form-label'>贷款利息</label>
+      <icon class='form-icon' data-type='loan' bindtap='bindShowIntro' type='info'></icon>
       <picker class='form-wrapper' data-type='loan' bindchange='bindSelectChange' value="{{loanArrIndex}}" range="{{loanArr}}" range-key='text'>
-        <view class='picker-show'>{{loanArr[loanArrIndex].label}}</view>
+        <view>{{loanArr[loanArrIndex].label}}</view>
+        <view class='select-arrow'></view>
       </picker>
     </view>
 
-    <view class='mt-10'>
-      <label class='form-label'>住房租金：</label>
-      <icon data-type='rent' bindtap='bindShowIntro' type='info'></icon>
+    <view class='mt-10 row'>
+      <label class='form-label'>住房租金</label>
+      <icon class='form-icon' data-type='rent' bindtap='bindShowIntro' type='info'></icon>
       <picker class='form-wrapper' data-type='rent' bindchange='bindSelectChange' value="{{rentArrIndex}}" range="{{rentArr}}" range-key='text'>
-        <view class='picker-show'>{{rentArr[rentArrIndex].label}}</view>
+        <view>{{rentArr[rentArrIndex].label}}</view>
+        <view class='select-arrow'></view>
       </picker>
     </view>
 
-    <view class='mt-10'>
-      <label class='form-label'>赡养老人：</label>
-      <icon data-type='support' bindtap='bindShowIntro' type='info'></icon>
+    <view class='mt-10 row'>
+      <label class='form-label'>赡养老人</label>
+      <icon class='form-icon' data-type='support' bindtap='bindShowIntro' type='info'></icon>
       <picker class='form-wrapper' data-type='support' bindchange='bindSelectChange' value="{{supportArrIndex}}" range="{{supportArr}}" range-key='text'>
-        <view class='picker-show'>{{supportArr[supportArrIndex].label}}</view>
+        <view>{{supportArr[supportArrIndex].label}}</view>
+        <view class='select-arrow'></view>
       </picker>
     </view>
   </view>

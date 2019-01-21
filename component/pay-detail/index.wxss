@@ -5,7 +5,23 @@
 }
 
 .row {
-  border-top: 1px solid red;
-  margin-top: 20rpx;
-  padding-top: 20rpx;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);  
+  padding: 20rpx 0;
+}
+
+.table-header {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.table-detail2 {
+  margin-top: 50rpx;
+}
+
+.cell-content {
+  color: #2196f3;
+  cursor: pointer;  
+}
+
+.cell-content:hover {
+  text-decoration: underline;
 }

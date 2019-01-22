@@ -13,6 +13,6 @@
 }
 
 .fund-show-text {
-  color: pink;
+  color: #D66;
   margin-left: 10rpx;
 }

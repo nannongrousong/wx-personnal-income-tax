@@ -18,6 +18,9 @@ Component({
       const {
         detail
       } = e.target.dataset;
+      if(detail == '' || detail == '/') {
+        return;
+      }
       wx.showModal({
         content: detail,
         showCancel: false,

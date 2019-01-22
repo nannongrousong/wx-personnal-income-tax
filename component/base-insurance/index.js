@@ -65,8 +65,8 @@ Component({
         });
 
         this.triggerEvent('FormData', {
-          socialShow,
-          fundShow
+          socialShow: Number(socialShow),
+          fundShow: Number(fundShow)
         });
       }
     },
@@ -100,9 +100,9 @@ Component({
         const fundShowText = fundShowInfo.text;
 
         this.triggerEvent('FormData', {
-          baseFundArrIndex: fundR,
-          socialShow,
-          fundShow
+          baseFundArrIndex: Number(fundR),
+          socialShow: Number(socialShow),
+          fundShow: Number(fundShow)
         });
 
         this.setData({

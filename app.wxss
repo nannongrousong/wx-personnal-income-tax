@@ -5,8 +5,5 @@ page {
   height: 100%;
   font-size: 28rpx;
   color: rgba(0, 0, 0, 0.87);
-}
-
-.container {
   background-color: #EEE;
 }

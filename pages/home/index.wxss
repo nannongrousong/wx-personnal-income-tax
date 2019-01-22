@@ -1,0 +1,17 @@
+.more {
+  color: rgba(33, 150, 243, 0.7);
+  position: fixed;
+  bottom: 20rpx;
+  width: 200rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.more-icon {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 15rpx;
+}

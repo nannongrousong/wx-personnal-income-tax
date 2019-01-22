@@ -1,11 +1,8 @@
 @import "/style/common.wxss";
 
-.tax-table {
-  margin-top: 30rpx;
-}
-
 .table-header {
   color: rgba(0, 0, 0, 0.54);
+  padding-top: 0 !important;
 }
 
 .row {
@@ -27,4 +24,8 @@
 
 .col4 {
   width: 22%;
+}
+
+.url {
+  color: rgba(33, 150, 243, 1);
 }

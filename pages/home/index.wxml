@@ -1,5 +1,4 @@
-<view class="container">
-  <view style='height: 20rpx;'></view>
+<view>
 
   <main-oper area='{{ area }}' grossPay='{{ grossPay }}' bindAreaChange='bindAreaChange' bindPayChange='bindPayChange' bindCompute='bindCompute'></main-oper>
   <base-insurance area='{{ area }}' grossPay='{{ grossPay }}' bindFormData='bindFormData' formData='{{ formData }}'></base-insurance>
@@ -9,7 +8,8 @@
     <pay-detail payDetail='{{ payDetail }}' taxDetail='{{ taxDetail }}'></pay-detail>
   </view>
 
-  <navigator url='/pages/tax-ratio/index' hover-class="navigator-hover">
-    <button>查看个人所得税预扣率表</button>
+  <navigator url='/pages/more/index' class='more'>
+    <image class='more-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/link.png'></image>
+    <text>了解更多</text>
   </navigator>
 </view>

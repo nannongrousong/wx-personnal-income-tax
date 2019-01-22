@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/tax-ratio/index"
+    "pages/more/index"    
   ],
   "window": {
     "backgroundTextStyle": "light",

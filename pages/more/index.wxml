@@ -1,0 +1,38 @@
+<view class='wrapper'>
+  <view class='title'>个人所得税预扣率表</view>
+  <view class='display-flex row tax-table table-header'>
+    <view class='col1'>级数</view>
+    <view class='col2'>累计预扣预缴应税所得</view>
+    <view class='col3 text-right'>预扣率</view>
+    <view class='col4 text-right'>速算扣除数</view>
+  </view>
+  <block wx:for="{{ taxRatio }}" wx:key='level'>
+    <view class='display-flex row table-content'>
+      <view class='col1'>{{ item.level }}</view>
+      <view class='col2'>{{ item.shouldTax }}</view>
+      <view class='col3 text-right'>{{ item.preOffRatio }}</view>
+      <view class='col4 text-right'>{{ item.baseOff }}</view>
+    </view>
+  </block>
+</view>
+
+<view class='wrapper'>
+  <view class='title'>政策文件(长按复制地址)</view>
+  <view bindlongpress='bindCopyUrl'>
+    <view data-url='http://www.gov.cn/zhengce/content/2018-12/22/content_5351181.htm' class='url'>1、国务院关于印发个人所得税专项附加扣除暂行办法的通知</view>
+    <view data-url='http://www.chinatax.gov.cn/n810341/n810755/c3960540/content.html' class='mt-10 url'>2、国家税务总局关于发布《个人所得税扣缴申报管理办法（试行）》的公告</view>
+  </view>
+</view>
+
+<view class='wrapper'>
+  <view class='title'>计算说明</view>
+  <view>1、取得职业资格教育专项扣除（3600/年）后，由于计税是累计进行，为获取最大优惠福利，在十二月份才会计算这笔扣除;</view>
+  <view>2、大病医疗需要在次年3月至6月办理年度汇算清缴时才能扣除，需要重新计算年度所得税，与预扣预缴税额比较后享受退税.</view>
+</view>
+
+<view class='wrapper'>
+  <view class='title'>关于作者</view>
+  <view>1、新税法出台后，本人也是查阅诸多资料、咨询官方热线后才开始写这个小程序，可以自信地说，这个小程序中计算税的公式是比较科学、规范的。但数据仅供参考，具体数据以地方税务局计算后为准;</view>
+  <view>2、邮箱(长按复制)：
+    <text bindlongpress='bindCopyUrl' data-url='yuanwansong@hotmai.com' class='url'>yuanwansong@hotmai.com</text>，欢迎提出bug和宝贵意见.</view>
+</view>

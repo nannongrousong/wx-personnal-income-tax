@@ -8,8 +8,8 @@
   <block wx:for="{{ payDetail }}" wx:key='id'>
     <view class='display-flex row'>
       <view class='flex-1'>{{ item.type }}</view>
-      <view class='flex-1 text-right cell-content'>{{item.person}} {{ item.personR >= 0 ? ('(' + item.personR + '%)') : '' }} </view>
-      <view class='flex-1 text-right cell-content'>{{item.company}} {{ item.companyR >= 0 ? ('(' + item.companyR + '%)') : '' }}</view>
+      <view class='flex-1 text-right'>{{item.person}} {{ item.personR >= 0 ? ('(' + item.personR + '%)') : '' }} </view>
+      <view class='flex-1 text-right'>{{item.company}} {{ item.companyR >= 0 ? ('(' + item.companyR + '%)') : '' }}</view>
     </view>
   </block>
 

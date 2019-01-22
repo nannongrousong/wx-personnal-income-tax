@@ -18,10 +18,10 @@
 }
 
 .cell-content {
-  color: #2196f3;
+  color: rgba(33, 150, 243, 0.9);
   cursor: pointer;  
 }
 
 .cell-content:hover {
-  text-decoration: underline;
+  color: rgba(33, 150, 243, 1);
 }

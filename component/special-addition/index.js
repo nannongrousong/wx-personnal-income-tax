@@ -74,10 +74,10 @@ Component({
         this.triggerEvent('FormData', updateData);
       }
     },
-    bindShowIntro: function(e) {
+    bindShowIntro: function(e) {    
       const {
         type
-      } = e.target.dataset;
+      } = e.currentTarget.dataset;
       const typeIntro = {
         childEdu: `1、按照每个子女每月1000元的标准定额扣除；\r\n2、可选择一方按扣除标准的100%扣除，也可选择双方分别按扣除标准的50%扣除。`,
         continueEdu: `1、接受学历（学位）继续教育的支出，在教育期间按照每月400元定额扣除。\r\n2、接受技能人员、专业技术人员职业资格继续教育的支出，在取得相关证书的当年，按照3600元定额扣除。`,

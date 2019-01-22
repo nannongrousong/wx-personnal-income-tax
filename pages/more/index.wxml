@@ -17,8 +17,8 @@
 </view>
 
 <view class='wrapper'>
-  <view class='title'>政策文件(长按复制地址)</view>
-  <view bindlongpress='bindCopyUrl'>
+  <view class='title'>政策文件</view>
+  <view bindtap='bindCopyUrl'>
     <view data-url='http://www.gov.cn/zhengce/content/2018-12/22/content_5351181.htm' class='url'>1、国务院关于印发个人所得税专项附加扣除暂行办法的通知</view>
     <view data-url='http://www.chinatax.gov.cn/n810341/n810755/c3960540/content.html' class='mt-10 url'>2、国家税务总局关于发布《个人所得税扣缴申报管理办法（试行）》的公告</view>
   </view>
@@ -34,5 +34,5 @@
   <view class='title'>关于作者</view>
   <view>1、新税法出台后，本人也是查阅诸多资料、咨询官方热线后才开始写这个小程序，可以自信地说，这个小程序中计算税的公式是比较科学、规范的。但数据仅供参考，具体数据以地方税务局计算后为准;</view>
   <view>2、邮箱(长按复制)：
-    <text bindlongpress='bindCopyUrl' data-url='yuanwansong@hotmai.com' class='url'>yuanwansong@hotmai.com</text>，欢迎提出bug和宝贵意见.</view>
+    <text bindtap='bindCopyUrl' data-url='yuanwansong@hotmai.com' class='url'>yuanwansong@hotmai.com</text>，欢迎提出bug和宝贵意见.</view>
 </view>

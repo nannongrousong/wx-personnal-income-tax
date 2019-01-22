@@ -21,7 +21,7 @@
 
   <view class='row'>
     <view class='width-50'>
-      <label>汇缴住房公积金</label>
+      <label>住房公积金</label>
       <picker class='y-select' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
         <view class='label'>{{baseFundArr[baseFundArrIndex].text}}</view>
         <view class='select-arrow'></view>
@@ -29,7 +29,7 @@
     </view>
 
     <view class='width-50'>
-      <label>汇缴补充公积金</label>
+      <label>补充公积金</label>
       <picker class='y-select' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
         <view class='label'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
         <view class='select-arrow'></view>

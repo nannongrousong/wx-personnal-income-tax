@@ -1,32 +1,35 @@
 <view class='wrapper'>
   <view class='title'>五险一金汇缴设置</view>
   <view>
-    <text>社保汇缴基数{{ socialShowText }}</text>
-    <view class='display-flex'>
-      <input class='row width-50' placeholder='3000' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' disabled='{{ !socialChecked }}' ></input>
-      <checkbox class='row width-50' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+    <view>社保汇缴基数<text class='fund-show-text'>{{ socialShowText }}</text></view>
+    <view class='display-flex row'>
+      <input class='row-left y-select' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' disabled='{{ !socialChecked }}'></input>
+      <checkbox class='row-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
     </view>
   </view>
 
   <view>
-    <text>公积金汇缴基数{{ fundShowText }}</text>
-    <view class='display-flex'>
-      <input class='row width-50' placeholder='5000' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' disabled='{{ !fundChecked }}'></input>
-      <checkbox class='row width-50' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+    <view>公积金汇缴基数<text class='fund-show-text'>{{ fundShowText }}</text>
+    </view>    
+    <view class='display-flex row'>
+      <input class='row-left y-select' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' disabled='{{ !fundChecked }}'></input>
+      <checkbox class='row-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
     </view>
   </view>
 
-  <view class='display-flex'>
-    <label class='row width-50'>汇缴住房公积金</label>
-    <picker class='row width-50' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
-      <view class='row'>{{baseFundArr[baseFundArrIndex].text}}</view>
+  <view class='row'>
+    <label class='row-left'>汇缴住房公积金</label>
+    <picker class='row-right y-select' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
+      <view class='label'>{{baseFundArr[baseFundArrIndex].text}}</view>
+      <view class='select-arrow'></view>
     </picker>
   </view>
 
-  <view class='display-flex'>
-    <label class='row width-50'>汇缴补充公积金</label>
-    <picker class='row width-50' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
-      <view class='row'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
+  <view class='row'>
+    <label class='row-left'>汇缴补充公积金</label>
+    <picker class='row-right y-select' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
+      <view class='label'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
+      <view class='select-arrow'></view>
     </picker>
   </view>
 </view>

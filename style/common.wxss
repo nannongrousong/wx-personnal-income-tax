@@ -6,10 +6,16 @@
 
 .wrapper .title {
   font-weight: bold;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
 }
 
 .mt-10 {
   margin-top: 10rpx;
+}
+
+.width-30 {
+  width: 30%;
 }
 
 .width-50 {
@@ -19,6 +25,8 @@
 .display-flex {
   display: flex;
 }
+
+/* 字体居中 */
 
 .text-left {
   text-align: left;
@@ -30,4 +38,30 @@
 
 .text-center {
   text-align: center;
+}
+
+/* 下拉框 */
+.y-select {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  position: relative;
+}
+
+.y-select:hover {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.87);
+}
+
+.y-select .label {
+  padding-left: 10rpx;
+}
+
+.y-select .select-arrow {
+  border-style: solid;
+  border-width: 14rpx;
+  border-color: rgba(0, 0, 0, 0.54) transparent transparent transparent;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 10rpx;
+  bottom: 0;
 }

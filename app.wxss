@@ -9,5 +9,4 @@ page {
 
 .container {
   background-color: #EEE;
-  height: 100%;  
 }

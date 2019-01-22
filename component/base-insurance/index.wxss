@@ -1,8 +1,21 @@
 @import "/style/common.wxss";
 
 .row {
-  display: inline-block;
-  height: 2rem;
-  line-height: 2rem;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  padding: 15rpx 0 10rpx 0;
+}
+
+.row-left {
+  width: 40%;
+}
+
+.row-right {
+  text-align: center;
+  width: 30%;
+}
+
+.fund-show-text {
+  color: pink;
+  margin-left: 10rpx;
 }

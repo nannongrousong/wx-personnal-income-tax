@@ -1,35 +1,39 @@
 <view class='wrapper'>
   <view class='title'>五险一金汇缴设置</view>
-  <view>
-    <view>社保汇缴基数<text class='fund-show-text'>{{ socialShowText }}</text></view>
-    <view class='display-flex row'>
-      <input class='row-left y-select' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' disabled='{{ !socialChecked }}'></input>
-      <checkbox class='row-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
-    </view>
-  </view>
 
-  <view>
-    <view>公积金汇缴基数<text class='fund-show-text'>{{ fundShowText }}</text>
-    </view>    
-    <view class='display-flex row'>
-      <input class='row-left y-select' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' disabled='{{ !fundChecked }}'></input>
-      <checkbox class='row-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+  <view class='row'>
+    <view class='width-50'>
+      <text>社保汇缴基数</text>
+      <text class='fund-show-text'>{{ socialShowText }}</text>
     </view>
+    <input class='y-select text-center width-20' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' disabled='{{ !socialChecked }}'></input>
+    <checkbox class='width-30 text-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
   </view>
 
   <view class='row'>
-    <label class='row-left'>汇缴住房公积金</label>
-    <picker class='row-right y-select' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
-      <view class='label'>{{baseFundArr[baseFundArrIndex].text}}</view>
-      <view class='select-arrow'></view>
-    </picker>
+    <view class='width-50'>
+      <text>公积金汇缴基数</text>
+      <text class='fund-show-text'>{{ fundShowText }}</text>
+    </view>
+    <input class='y-select text-center width-20' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' disabled='{{ !fundChecked }}'></input>
+    <checkbox class='width-30 text-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
   </view>
 
   <view class='row'>
-    <label class='row-left'>汇缴补充公积金</label>
-    <picker class='row-right y-select' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
-      <view class='label'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
-      <view class='select-arrow'></view>
-    </picker>
+    <view class='width-50'>
+      <label>汇缴住房公积金</label>
+      <picker class='y-select' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
+        <view class='label'>{{baseFundArr[baseFundArrIndex].text}}</view>
+        <view class='select-arrow'></view>
+      </picker>
+    </view>
+
+    <view class='width-50'>
+      <label>汇缴补充公积金</label>
+      <picker class='y-select' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
+        <view class='label'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
+        <view class='select-arrow'></view>
+      </picker>
+    </view>
   </view>
 </view>

@@ -168,7 +168,7 @@ Component({
         let newState = !this.data[`${type}Checked`];
         if (newState === false) {
           this.triggerEvent('FormData', {
-            [`${type}Show`]: computeShow(grossPay, type == 'social' ? social : fund)
+            [`${type}Show`]: computeBaseShow(grossPay, type == 'social' ? social : fund).val
           });
         }
       }

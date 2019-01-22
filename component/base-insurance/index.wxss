@@ -6,13 +6,10 @@
   padding: 15rpx 0 10rpx 0;
 }
 
-.row-left {
-  width: 40%;
-}
-
-.row-right {
-  text-align: center;
-  width: 30%;
+.y-select {
+  display: inline-block;
+  margin-left: 20rpx;
+  width: 100rpx;
 }
 
 .fund-show-text {

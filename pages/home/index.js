@@ -193,8 +193,13 @@ Page({
       const { taxRatio, baseOff } = computeTax(shouldTax);
       //  月扣除税
       const monthTax = shouldTax * taxRatio * 0.01 - baseOff - taxCost;
+      //  扣除税公式
+      const taxFormula = `${showMoney(shouldTax)}(月应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免征额度) - ${showMoney(insuFundAll)}(累计缴纳五险一金) - ${showMoney(specailOffAll)}(累计专项扣除);
+      ${showMoney(monthTax)}(月扣除税) = ${showMoney(shouldTax)}(月应税工资) * ${showMoney(taxRatio)}%(预扣率) - ${showMoney(baseOff)}(速算扣除数) - ${showMoney(taxCost)}(累计扣除税).`;
       //  税后收入
       const netPay = grossPay - monthTax - personCostAll;
+      //  税后收入公式
+      const realLeftFormula = `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax)}(月扣除税) - ${showMoney(personCostAll)}(月缴纳五险一金).`;
       //  年度总缴纳税
       taxCost += monthTax;
       //  累计到手收入
@@ -204,21 +209,32 @@ Page({
         id: index,
         month: `${index + 1}月`,
         tax: showMoney(monthTax),
-        taxFormula: `${showMoney(shouldTax)}(月应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免征额度) - ${showMoney(insuFundAll)}(累计缴纳五险一金) - ${showMoney(specailOffAll)}(累计专项扣除);
-          ${showMoney(monthTax)}(月扣除税) = ${showMoney(shouldTax)}(月应税工资) * ${showMoney(taxRatio)}%(预扣率) - ${showMoney(baseOff)}(速算扣除数) - ${showMoney(taxCost)}(累计扣除税).`,
+        taxFormula,
         realLeft: showMoney(netPay),
-        realLeftFormula: `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax)}(月扣除税) - ${showMoney(personCostAll)}(月缴纳五险一金).`
+        realLeftFormula
       };
     });
 
     taxDetail.push({
-      id: taxDetail.length + 1,
+      id: taxDetail.length,
       month: '累计',
       tax: showMoney(taxCost),
       taxFormula: '/',
       realLeft: showMoney(leftAll),
       realLeftFormula: '/'
     });
+
+    //  第十二月还为负数
+    if(taxDetail[11].tax < 0) {
+      taxDetail.push({
+        id: taxDetail.length,
+        month: '汇算清缴退税[多退]',
+        tax: showMoney(Math.abs(taxDetail[11].tax)),
+        taxFormula: '/',
+        realLeft: '/',
+        realLeftFormula: '/'
+      });
+    }
 
     if (bigSick > 0) {
       //  开始计算退税
@@ -230,8 +246,8 @@ Page({
       //  >0退税，不太应该小于0
       const returnTax = taxCost - newYearTax;
       taxDetail.push({
-        id: taxDetail.length + 1,
-        month: '次年汇算清缴退税',
+        id: taxDetail.length,
+        month: '汇算清缴退税[大病医疗]',
         tax: showMoney(returnTax),
         taxFormula: `${showMoney(newShouldTax)}(累计应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免征额度) - ${showMoney(insuFundAll)}(累计缴纳五险一金) - ${showMoney(specailOffAll)}(累计专项附加扣除);
       ${showMoney(newYearTax)}(实际累计税) = ${showMoney(newShouldTax)}(累计应税工资) * ${taxRatio}%(预扣率) - ${showMoney(baseOff)}(速算扣除数);

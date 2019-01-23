@@ -1,6 +1,6 @@
 .wrapper {
-  background-color: #FFF;
-  margin: 20rpx; 
+  background-color: #fff;
+  margin: 20rpx;
   padding: 30rpx;
 }
 
@@ -45,12 +45,13 @@
 }
 
 /* 下拉框 */
-.y-select {
+
+.y-select,.y-input {
   border-bottom: 1px solid rgba(0, 0, 0, 0.42);
   position: relative;
 }
 
-.y-select:hover {
+.y-select:hover,.y-input:hover {
   transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   border-bottom: 2px solid rgba(0, 0, 0, 0.87);
 }
@@ -68,4 +69,31 @@
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+.y-input-wrapper {
+  position: relative;
+}
+
+.y-input-wrapper::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 1000ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid #1976d2;
+}
+
+.y-input-focus::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  content: "";
+  position: absolute;
+  transform: scaleX(1);
+  transition: transform 1000ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid #1976d2;
 }

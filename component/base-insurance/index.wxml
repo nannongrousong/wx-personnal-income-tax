@@ -6,7 +6,9 @@
       <text>社保汇缴基数</text>
       <text class='fund-show-text'>{{ socialShowText }}</text>
     </view>
-    <input class='y-select text-center width-20' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' disabled='{{ !socialChecked }}'></input>
+    <view data-type='social' class='y-input-wrapper {{ socailFocusStyle }}'>
+      <input class='y-input text-center width-20' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur' disabled='{{ !socialChecked }}'></input>
+    </view>
     <checkbox class='width-30 text-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
   </view>
 
@@ -15,7 +17,9 @@
       <text>公积金汇缴基数</text>
       <text class='fund-show-text'>{{ fundShowText }}</text>
     </view>
-    <input class='y-select text-center width-20' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' disabled='{{ !fundChecked }}'></input>
+    <view data-type='fund' class='y-input-wrapper {{ fundFocusStyle }}'>
+      <input class='y-input text-center width-20' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur' disabled='{{ !fundChecked }}'></input>
+    </view>
     <checkbox class='width-30 text-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
   </view>
 

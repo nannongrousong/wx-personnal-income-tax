@@ -139,7 +139,9 @@ Component({
     socialChecked: false,
     fundChecked: false,
     socialShowText: '(下限)',
-    fundShowText: '(下限)'
+    fundShowText: '(下限)',
+    socialFocusStyle: '',
+    fundFocusStyle: ''
   },
   methods: {
     bindSelectChange: function(e) {
@@ -182,6 +184,24 @@ Component({
       } = e.target.dataset;
       this.triggerEvent('FormData', {
         [`${type}Show`]: e.detail.value
+      });
+    },
+    bindBaseInputFocus: function(e) {
+      const {
+        type
+      } = e.target.dataset;
+
+      this.setData({
+        [`${type}FocusStyle`]: 'y-input-focus'
+      });
+    },
+    bindBaseInputBlur: function(e) {
+      const {
+        type
+      } = e.target.dataset;
+
+      this.setData({
+        [`${type}FocusStyle`]: ''
       });
     }
   },

@@ -15,7 +15,7 @@ Component({
     area: {
       type: String,
       value: '',
-      observer: function (newVal, oldVal, changedPath) {
+      observer: function(newVal, oldVal, changedPath) {
         this.setData({
           areaArrIndex: areas.findIndex((item) => item.value == newVal)
         });
@@ -28,7 +28,8 @@ Component({
   },
   data: {
     areaArr: areas,
-    areaArrIndex: 0
+    areaArrIndex: 0,
+    focusStyle: ''
   },
   methods: {
     bindAreaChange: function(e) {
@@ -38,13 +39,24 @@ Component({
     bindPayInput: function(e) {
       this.triggerEvent('PayChange', e.detail.value);
     },
+    bindPayBlur: function(e) {
+      this.setData({
+        focusStyle: ''
+      });
+    },
+    bindPayFocus: function(e) {
+      this.setData({
+        focusStyle: 'y-input-focus'
+      });
+    },
     bindCompute: function(e) {
       this.triggerEvent('Compute');
     }
   },
   ready: function() {
     const {
-      area, grossPay
+      area,
+      grossPay
     } = this.properties;
     this.setData({
       area,

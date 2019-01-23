@@ -3,7 +3,7 @@
 
 page {
   height: 100%;
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: rgba(0, 0, 0, 0.87);
   background-color: #EEE;
 }

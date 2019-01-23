@@ -23,33 +23,34 @@ Page({
 
     },
     payDetail: [],
-    taxDetail: []
+    taxDetail: [],
+    footerStyle: ''
   },
-  bindAreaChange: function (e) {
+  bindAreaChange: function(e) {
     this.setData({
       area: e.detail
-    }, function () {
+    }, function() {
       console.log('this.data.area', this.data.area);
     });
   },
-  bindPayChange: function (e) {
+  bindPayChange: function(e) {
     this.setData({
       grossPay: e.detail
-    }, function () {
+    }, function() {
       console.log('this.data.pay', this.data.grossPay);
     });
   },
-  bindFormData: function (e) {
+  bindFormData: function(e) {
     this.setData({
       formData: {
         ...this.data.formData,
         ...e.detail
       }
-    }, function () {
+    }, function() {
       console.log('this.formData', this.data.formData);
     });
   },
-  bindCompute: function (e) {
+  bindCompute: function(e) {
     //  核心开始计算个税
     const {
       area,
@@ -190,7 +191,10 @@ Page({
         shouldTax = 0;
       }
       //  根据应税工资获取 预扣率和速算扣除数
-      const { taxRatio, baseOff } = computeTax(shouldTax);
+      const {
+        taxRatio,
+        baseOff
+      } = computeTax(shouldTax);
       //  月扣除税
       const monthTax = shouldTax * taxRatio * 0.01 - baseOff - taxCost;
       //  扣除税公式
@@ -225,7 +229,7 @@ Page({
     });
 
     //  第十二月还为负数
-    if(taxDetail[11].tax < 0) {
+    if (taxDetail[11].tax < 0) {
       taxDetail.push({
         id: taxDetail.length,
         month: '汇算清缴退税[多退]',
@@ -240,7 +244,10 @@ Page({
       //  开始计算退税
       //  新-应税收入
       const newShouldTax = grossPayAll - basePreferAll - insuFundAll - specailOffAll - bigSick;
-      const { taxRatio, baseOff } = computeTax(newShouldTax);
+      const {
+        taxRatio,
+        baseOff
+      } = computeTax(newShouldTax);
       //  新-累计税
       const newYearTax = newShouldTax * taxRatio * 0.01 - baseOff;
       //  >0退税，不太应该小于0
@@ -265,14 +272,23 @@ Page({
 
     console.log('taxDetail', taxDetail);
     console.log('总taxCost', taxCost);
-  },
-  onShow: function () {
 
+    this.setData({
+      footerStyle: 'position-rela'
+    });
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
+    const {
+      windowHeight
+    } = wx.getSystemInfoSync();
+    const that = this;
 
-  },
-  onHide: function () {
-
+    wx.createSelectorQuery().select('.container').boundingClientRect(function(rect) {
+      if (rect.height + 40 > windowHeight) {
+        that.setData({
+          footerStyle: 'position-rela'
+        });
+      }
+    }).exec()
   }
 })

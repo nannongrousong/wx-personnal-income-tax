@@ -278,6 +278,10 @@ Page({
     });
   },
   onLoad: function(options) {
+    wx.showShareMenu({
+      
+    });
+
     const {
       windowHeight
     } = wx.getSystemInfoSync();
@@ -289,6 +293,15 @@ Page({
           footerStyle: 'position-rela'
         });
       }
-    }).exec()
+    }).exec();
+  },
+  onShareAppMessage: function(options) {
+
+  },
+  bindSelfShare: function(e) {
+    wx.showModal({
+      content: '觉得该小程序不错？\r\n点击页面右上角 ... 将小程序分享给好友吧~',
+      showCancel: false
+    });
   }
 })

@@ -17,6 +17,10 @@
   margin-right: 15rpx;
 }
 
+.split {
+  margin: 0 8rpx;
+}
+
 .position-rela {
   position: relative !important;
 }

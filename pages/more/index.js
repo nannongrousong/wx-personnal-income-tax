@@ -10,6 +10,10 @@ Page({
     taxRatio: []
   },
   onLoad: function() {
+    wx.showShareMenu({
+
+    });
+    
     const taxRatio = taxRatioMap.map(({
       level,
       shouldTax,
@@ -18,7 +22,7 @@ Page({
     }) => {
       return {
         level,
-        shouldTax: level == 1 ? `A≤${shouldTax[1]}元` : (level == 7 ? `A＞${shouldTax[0]}元` : `${shouldTax[0]}元＜A≤${shouldTax[1]}元`),
+        shouldTax: level == 1 ? `A≤${shouldTax[1]}` : (level == 7 ? `A＞${shouldTax[0]}` : `${shouldTax[0]}＜A≤${shouldTax[1]}`),
         preOffRatio: `${preOffRatio}%`,
         baseOff
       };
@@ -27,6 +31,9 @@ Page({
     this.setData({
       taxRatio
     });
+  },
+  onShareAppMessage: function (options) {
+
   },
   bindCopyUrl: function(e) {
     const {

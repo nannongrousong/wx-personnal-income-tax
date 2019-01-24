@@ -26,13 +26,13 @@
 
 <view class='wrapper'>
   <view class='title'>计算说明</view>
-  <view>1、取得职业资格教育专项扣除（3600/年）后，由于计税是累计进行，为获取最大优惠福利，在十二月份才会计算这笔扣除;</view>
-  <view>2、大病医疗需要在次年3月至6月办理年度汇算清缴时才能扣除，需要重新计算年度所得税，与预扣预缴税额比较后享受退税.</view>
+  <view>1、专项扣除有两种方式：按月和按年。如职业资格教育专项按年度扣除（3600/年），由于计税是累计进行，为获取最大优惠，在十二月份才会计算这笔扣除;</view>
+  <view class='mt-10'>2、大病医疗需要在次年3月至6月办理年度汇算清缴时才能扣除，届时需重新计算年度所得税，与预扣预缴税额比较后享受退税优惠.</view>
 </view>
 
 <view class='wrapper'>
-  <view class='title'>关于作者</view>
+  <view class='title'>更多</view>
   <view>1、新税法出台后，本人查阅诸多资料、咨询官方热线后写了这个小程序，但由于个税计算比较复杂，数据仅供参考，具体数据以地方税务局核算后为准;</view>
-  <view>2、邮箱：
+  <view class='mt-10'>2、本人邮箱：
     <text bindtap='bindCopyUrl' data-url='yuanwansong@hotmai.com' class='url'>yuanwansong@hotmai.com</text>，欢迎提出bug和宝贵意见.</view>
 </view>

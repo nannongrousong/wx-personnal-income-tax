@@ -5,7 +5,7 @@
     <view class='row'>
       <view class='width-40' data-type='childEdu' bindtap='bindShowIntro'>
         <label class='form-label'>子女教育</label>
-        <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/child-edu.png'></image>
+        <image class='form-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/child-edu.png'></image>
       </view>
       <picker class='form-wrapper y-select' data-type='childEdu' bindchange='bindSelectChange' value="{{childEduArrIndex}}" range="{{childEduArr}}" range-key='text'>
         <view class='label'>{{childEduArr[childEduArrIndex].label}}</view>
@@ -16,7 +16,7 @@
     <view class='row'>
       <view class='width-40' data-type='continueEdu' bindtap='bindShowIntro'>
         <label class='form-label'>继续教育</label>
-        <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/continue-edu.png'></image>
+        <image class='form-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/continue-edu.png'></image>
       </view>
       <picker class='form-wrapper y-select' data-type='continueEdu' bindchange='bindSelectChange' value="{{continueEduArrIndex}}" range="{{continueEduArr}}" range-key='text'>
         <view class='label'>{{continueEduArr[continueEduArrIndex].label}}</view>
@@ -27,7 +27,7 @@
     <view class='row'>
       <view class='width-40' data-type='bigSick' bindtap='bindShowIntro'>
         <label class='form-label'>大病医疗</label>
-        <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/big-sick.png'></image>
+        <image class='form-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/big-sick.png'></image>
       </view>
       <input class='form-wrapper y-select big-sick-input' type='number' data-type='bigSick' value='{{ bigSick }}' bindinput='bindSelectChange' placeholder='不超过8万'></input>
     </view>
@@ -35,7 +35,7 @@
     <view class='row'>
       <view class='width-40' data-type='loan' bindtap='bindShowIntro'>
         <label class='form-label'>贷款利息</label>
-        <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/loan.png'></image>
+        <image class='form-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/loan.png'></image>
       </view>
       <picker class='form-wrapper y-select' data-type='loan' bindchange='bindSelectChange' value="{{loanArrIndex}}" range="{{loanArr}}" range-key='text'>
         <view class='label'>{{loanArr[loanArrIndex].label}}</view>
@@ -46,7 +46,7 @@
     <view class='row'>
       <view class='width-40' data-type='rent' bindtap='bindShowIntro'>
         <label class='form-label'>住房租金</label>
-        <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/rent.png'></image>
+        <image class='form-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/rent.png'></image>
       </view>
       <picker class='form-wrapper y-select' data-type='rent' bindchange='bindSelectChange' value="{{rentArrIndex}}" range="{{rentArr}}" range-key='text'>
         <view class='label'>{{rentArr[rentArrIndex].label}}</view>
@@ -57,7 +57,7 @@
     <view class='row'>
       <view class='width-40' data-type='support' bindtap='bindShowIntro'>
         <label class='form-label'>赡养老人</label>
-        <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/support.png'></image>
+        <image class='form-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/support.png'></image>
       </view>
       <picker class='form-wrapper y-select' data-type='support' bindchange='bindSelectChange' value="{{supportArrIndex}}" range="{{supportArr}}" range-key='text'>
         <view class='label'>{{supportArr[supportArrIndex].label}}</view>

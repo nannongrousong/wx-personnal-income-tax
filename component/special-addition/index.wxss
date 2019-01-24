@@ -1,5 +1,11 @@
 @import "/style/common.wxss";
 
+.row {
+  display: flex;
+  align-items: center;
+  padding: 15rpx 0 10rpx 0;
+}
+
 .form-label {
   color: rgba(33, 150, 243, 0.9);
   cursor: pointer;
@@ -10,17 +16,13 @@
 }
 
 .form-icon {
-  margin: 0 20rpx;
+  margin: 0 0 0 60rpx;
   height: 40rpx;
   width: 40rpx;
 }
 
 .form-wrapper {
-  width: 50%;
-}
-
-input.form-wrapper {
-  padding-left: 10rpx;
+  width: 60%;
 }
 
 .row {
@@ -32,4 +34,9 @@ input.form-wrapper {
 .row > view {
   display: flex;
   align-items: center;
+}
+
+.special-addition picker, .special-addition input {
+  text-align: center;
+  margin-left: 10%;
 }

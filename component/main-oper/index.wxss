@@ -4,3 +4,47 @@
   display: flex;
   align-items: center;
 }
+
+.area-select {
+  text-align: center;
+  width: 25%;
+  border-bottom-width: 0;
+}
+
+.area-select .select-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-select .select-arrow {
+  border-style: solid;
+  border-width: 14rpx;
+  border-color: rgba(0, 0, 0, 0.54) transparent transparent transparent;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  margin-top: 14rpx;
+  margin-left: 10rpx;
+}
+
+.pay-input {
+  width: 40%;
+  margin: 0 10% 0 5%;
+}
+
+.part3 {
+  background-color: #e53935;
+  margin-left: 10rpx;
+  color: #eee;
+  max-width: 20%;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+                0 1px 7px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}

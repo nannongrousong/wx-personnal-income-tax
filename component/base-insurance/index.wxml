@@ -1,43 +1,44 @@
-<view class='wrapper'>
+<view class='wrapper base-insurance'>
   <view class='title'>五险一金汇缴设置</view>
 
+  <view class='fund-show-text'>
+    <text>社保汇缴基数</text>
+    <text>{{ socialShowText }}</text>
+  </view>
   <view class='row'>
-    <view class='width-50'>
-      <text>社保汇缴基数</text>
-      <text class='fund-show-text'>{{ socialShowText }}</text>
+    <view data-type='social' class='width-50 y-input-wrapper {{ socialFocusStyle }}'>
+      <input class='y-input text-center width-100' style='border-bottom-style: {{ !socialChecked ? "dashed" : "solid" }};' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur'
+        disabled='{{ !socialChecked }}'></input>
     </view>
-    <view data-type='social' class='y-input-wrapper {{ socialFocusStyle }}'>
-      <input class='y-input text-center width-20' style='border-bottom-style: {{ !socialChecked ? "dashed" : "solid" }};' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur' disabled='{{ !socialChecked }}'></input>
-    </view>
-    <checkbox class='width-30 text-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+    <checkbox class='width-40 text-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+  </view>
+
+  <view class='fund-show-text'>
+    <text>公积金汇缴基数</text>
+    <text>{{ fundShowText }}</text>
   </view>
 
   <view class='row'>
-    <view class='width-50'>
-      <text>公积金汇缴基数</text>
-      <text class='fund-show-text'>{{ fundShowText }}</text>
+    <view data-type='fund' class='width-50 y-input-wrapper {{ fundFocusStyle }}'>
+      <input class='y-input text-center width-100' style='border-bottom-style: {{ !fundChecked ? "dashed" : "solid" }};' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur'
+        disabled='{{ !fundChecked }}'></input>
     </view>
-    <view data-type='fund' class='y-input-wrapper {{ fundFocusStyle }}'>
-      <input class='y-input text-center width-20' style='border-bottom-style: {{ !fundChecked ? "dashed" : "solid" }};' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur' disabled='{{ !fundChecked }}'></input>
-    </view>
-    <checkbox class='width-30 text-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
+    <checkbox class='width-40 text-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
   </view>
 
   <view class='row'>
-    <view class='width-50'>
-      <label>住房公积金</label>
-      <picker class='y-select' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
-        <view class='label'>{{baseFundArr[baseFundArrIndex].text}}</view>
-        <view class='select-arrow'></view>
-      </picker>
-    </view>
+    <label class='width-50'>汇缴住房公积金比例</label>
+    <picker class='y-select width-40' data-type='baseFund' bindchange='bindSelectChange' value="{{baseFundArrIndex}}" range="{{baseFundArr}}" range-key='text'>
+      <view class='label text-center'>{{baseFundArr[baseFundArrIndex].text}}</view>
+      <view class='select-arrow'></view>
+    </picker>
+  </view>
 
-    <view class='width-50'>
-      <label>补充公积金</label>
-      <picker class='y-select' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
-        <view class='label'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
-        <view class='select-arrow'></view>
-      </picker>
-    </view>
+  <view class='row'>
+    <label class='width-50'>补充公积金比例</label>
+    <picker class='y-select width-40' data-type='suppleFund' bindchange='bindSelectChange' value="{{suppleFundArrIndex}}" range="{{suppleFundArr}}" range-key='text'>
+      <view class='label text-center'>{{suppleFundArr[suppleFundArrIndex].text}}</view>
+      <view class='select-arrow'></view>
+    </picker>
   </view>
 </view>

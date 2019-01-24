@@ -22,8 +22,20 @@
   width: 30%;
 }
 
+.width-40 {
+  width: 40%;
+}
+
 .width-50 {
   width: 50%;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-100 {
+  width: 100%;
 }
 
 .display-flex {
@@ -46,18 +58,19 @@
 
 /* 下拉框 */
 
-.y-select,.y-input {
+.y-select, .y-input {
   border-bottom: 1px solid rgba(0, 0, 0, 0.42);
   position: relative;
 }
 
-.y-select:hover,.y-input:hover {
+.y-select:hover {
   transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   border-bottom: 2px solid rgba(0, 0, 0, 0.87);
 }
 
 .y-select .label {
   padding-left: 10rpx;
+  text-align: center;
 }
 
 .y-select .select-arrow {
@@ -96,4 +109,34 @@
   transform: scaleX(1);
   transition: transform 1000ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
   border-bottom: 2px solid #1976d2;
+}
+
+/* 按钮波纹效果 */
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.8s;
+}
+
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
 }

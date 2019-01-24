@@ -1,12 +1,14 @@
 <view class='wrapper row'>
-  <picker style='flex: 3' class='y-select' bindchange='bindAreaChange' value="{{areaArrIndex}}" range="{{areaArr}}" range-key='text'>
-    <view class='label'>{{areaArr[areaArrIndex].text}}</view>
-    <view class='select-arrow'></view>
+  <picker class='area-select' bindchange='bindAreaChange' value="{{areaArrIndex}}" range="{{areaArr}}" range-key='text'>
+    <view class='select-label'>
+      <view>{{areaArr[areaArrIndex].text}}</view>
+      <view class='select-arrow'></view>
+    </view>
   </picker>
 
-  <view class='y-input-wrapper {{ focusStyle }}' style='flex: 5;'>
+  <view class='y-input-wrapper {{ focusStyle }} pay-input'>
     <input class='y-input text-center' bindinput='bindPayInput' bindfocus='bindPayFocus' bindblur='bindPayBlur' placeholder='税前工资' type='number' value='{{ grossPay }}' placeholder='税前工资'></input>
   </view>
 
-  <view style='flex: 2' bindtap='bindCompute'>计算</view>
+  <view class='part3 text-center ripple' bindtap='bindCompute'>计算</view>
 </view>

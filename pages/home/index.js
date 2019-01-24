@@ -69,6 +69,10 @@ Page({
       }
     } = this.data;
 
+    if (grossPay == '' || grossPay == 0) {
+      return;
+    }
+
     const areaInfo = socialFundBase.find((item) => item.value == area);
     const {
       insurance: {
@@ -279,7 +283,7 @@ Page({
   },
   onLoad: function(options) {
     wx.showShareMenu({
-      
+
     });
 
     const {

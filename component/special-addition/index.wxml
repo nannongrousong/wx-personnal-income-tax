@@ -1,9 +1,9 @@
-<view class='wrapper'>
+<view class='wrapper special-addition'>
   <view class='title'>专项附加扣除</view>
 
   <view style='width: 100%'>
     <view class='row'>
-      <view data-type='childEdu' bindtap='bindShowIntro'>
+      <view class='width-40' data-type='childEdu' bindtap='bindShowIntro'>
         <label class='form-label'>子女教育</label>
         <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/child-edu.png'></image>
       </view>
@@ -14,7 +14,7 @@
     </view>
 
     <view class='row'>
-      <view data-type='continueEdu' bindtap='bindShowIntro'>
+      <view class='width-40' data-type='continueEdu' bindtap='bindShowIntro'>
         <label class='form-label'>继续教育</label>
         <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/continue-edu.png'></image>
       </view>
@@ -25,15 +25,15 @@
     </view>
 
     <view class='row'>
-      <view data-type='bigSick' bindtap='bindShowIntro'>
+      <view class='width-40' data-type='bigSick' bindtap='bindShowIntro'>
         <label class='form-label'>大病医疗</label>
         <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/big-sick.png'></image>
       </view>
-      <input class='form-wrapper y-select' type='number' data-type='bigSick' value='{{ bigSick }}' bindinput='bindSelectChange' placeholder='不超过8万'></input>
+      <input class='form-wrapper y-select big-sick-input' type='number' data-type='bigSick' value='{{ bigSick }}' bindinput='bindSelectChange' placeholder='不超过8万'></input>
     </view>
 
     <view class='row'>
-      <view data-type='loan' bindtap='bindShowIntro'>
+      <view class='width-40' data-type='loan' bindtap='bindShowIntro'>
         <label class='form-label'>贷款利息</label>
         <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/loan.png'></image>
       </view>
@@ -44,7 +44,7 @@
     </view>
 
     <view class='row'>
-      <view data-type='rent' bindtap='bindShowIntro'>
+      <view class='width-40' data-type='rent' bindtap='bindShowIntro'>
         <label class='form-label'>住房租金</label>
         <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/rent.png'></image>
       </view>
@@ -55,7 +55,7 @@
     </view>
 
     <view class='row'>
-      <view data-type='support' bindtap='bindShowIntro'>
+      <view class='width-40' data-type='support' bindtap='bindShowIntro'>
         <label class='form-label'>赡养老人</label>
         <image class='form-icon' src='cloud://personnal-income-tax-012cd7.7065-personnal-income-tax-012cd7/support.png'></image>
       </view>

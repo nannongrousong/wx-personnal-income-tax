@@ -6,13 +6,15 @@
   padding: 15rpx 0 10rpx 0;
 }
 
-.y-input, .y-select {
-  display: inline-block;
-  margin-left: 20rpx;
-  width: 100rpx;
+.base-insurance checkbox, .base-insurance picker {
+  margin-left: 10%;
 }
 
 .fund-show-text {
+  font-size: 25rpx;
+}
+
+.fund-show-text text:nth-child(2) {
   color: #D66;
   margin-left: 10rpx;
 }

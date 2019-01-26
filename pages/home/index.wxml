@@ -10,7 +10,7 @@
 
 <view class='footer {{ footerStyle }}'>
   <navigator url='/pages/more/index'>
-    <image class='more-icon' src='cloud://personnal-income-tax-6955e7.7065-personnal-income-tax-6955e7/link.png'></image>
+    <image class='more-icon' src='/image/link.png'></image>
     <text>更多</text>
   </navigator>
   <text class='split'>|</text>

@@ -141,7 +141,7 @@ Page({
 
     console.log('payDetail', payDetail);
 
-    //  附加扣除[子女教育（月扣）、继续教育（月扣400，年扣3600）、大病医疗（年扣最高80000）、贷款利息（月扣1000）、住房租金（月扣）、赡养老人（月扣）]    
+    //  附加扣除[子女教育(月扣)、继续教育(月扣400，年扣3600)、大病医疗(年扣最高80000)、贷款利息(月扣1000)、住房租金(月扣)、赡养老人(月扣)]    
 
     const childEduM = childEduArr[childEduArrIndex].value;
     const continueEduM = continueEduArr[continueEduArrIndex].value;

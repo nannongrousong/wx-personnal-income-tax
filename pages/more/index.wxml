@@ -4,7 +4,7 @@
     <view class='col1'>级数</view>
     <view class='col2'>累计预扣预缴应税所得</view>
     <view class='col3 text-right'>预扣率</view>
-    <view class='col4 text-right'>速算扣除数</view>
+    <view class='col4 text-right'>速算扣除</view>
   </view>
   <block wx:for="{{ taxRatio }}" wx:key='level'>
     <view class='display-flex row table-content'>
@@ -35,9 +35,8 @@
     </view>
   </view>
   <view class='mt-10'>2、专项扣除有两种方式：
-    <text class='text-bold'>按月</text>和
-    <text class='text-bold'>按年</text>。如职业资格教育专项按年度扣除(3600/年)，由于计税是累计进行，为获取最大优惠，在十二月份才会计算这笔扣除</view>
-  <view class='mt-10'>3、大病医疗需要在次年3月至6月办理年度汇算清缴时才能扣除，届时需重新计算整年度所得税，与预扣预缴税额比较后享受退税优惠</view>
+    <text class='text-bold'>按月</text>和<text class='text-bold'>按年</text>。如职业资格教育专项按年度扣除(3600/年)，由于计税是累计进行，为获取最大优惠，在十二月份才会计算这笔扣除，建议您也在十二月申报</view>
+  <view class='mt-10'>3、大病医疗需要在次年3月至6月办理年度汇算清缴时才能扣除，届时需重新计算整年度所得税，与预扣预缴税额比较后享受退税红利</view>
 </view>
 
 <view class='wrapper'>

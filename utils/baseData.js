@@ -12,6 +12,84 @@ const socialFundBase = [{
     fundR: 12
   }
 }, {
+  value: 'shanghai',
+  text: '上海',
+  social: [4279, 21396],
+  fund: [2300, 21400],
+  insurance: {
+    yanglaoR: [8, 20],
+    yiliaoR: [2, 9.5],
+    shiyeR: [0.5, 0.5],
+    gongshangR: 0.2,
+    shengyuR: 1,
+    fundR: 7
+  }
+}, {
+  value: 'guangzhou',
+  text: '广州',
+  social: [2100, 24654],
+  fund: [2100, 24654],
+  insurance: {
+    yanglaoR: [8, 14],
+    yiliaoR: [2, 7],
+    shiyeR: [0.2, 0.64],
+    gongshangR: 0.2,
+    shengyuR: 0.85,
+    fundR: 5
+  }
+}, {
+  value: 'nanjing',
+  text: '南京',
+  social: [3030, 19935],
+  fund: [2020, 25300],
+  insurance: {
+    yanglaoR: [8, 19],
+    yiliaoR: [2, 9],
+    shiyeR: [0.5, 0.5],
+    gongshangR: 0.2,
+    shengyuR: 0.8,
+    fundR: 8
+  }
+}, {
+  value: 'hangzhou',
+  text: '杭州',
+  social: [3054.95, 15274.74],
+  fund: [2010, 24311],
+  insurance: {
+    yanglaoR: [8, 14],
+    yiliaoR: [2, 10.5],
+    shiyeR: [0.5, 0.5],
+    gongshangR: 0.2,
+    shengyuR: 1.2,
+    fundR: 12
+  }
+}, {
+  value: 'shenzhen',
+  text: '深圳',
+  social: [2200, 25044],
+  fund: [2130, 25044],
+  insurance: {
+    yanglaoR: [8, 14],
+    yiliaoR: [2, 6.2],
+    shiyeR: [0.5, 0.9],
+    gongshangR: 0.168,
+    shengyuR: 0.45,
+    fundR: 5
+  }
+}, {
+  value: 'suzhou',
+  text: '苏州',
+  social: [2802, 19613],
+  fund: [2802, 20000],
+  insurance: {
+    yanglaoR: [8, 19],
+    yiliaoR: [2, 9],
+    shiyeR: [0.5, 0.5],
+    gongshangR: 0.4,
+    shengyuR: 0.5,
+    fundR: 8
+  }
+}, {
   value: 'tianjin',
   text: '天津',
   social: [3364, 16821],
@@ -64,45 +142,6 @@ const socialFundBase = [{
     fundR: 12
   }
 }, {
-  value: 'shanghai',
-  text: '上海',
-  social: [4279, 21396],
-  fund: [2300, 21400],
-  insurance: {
-    yanglaoR: [8, 20],
-    yiliaoR: [2, 9.5],
-    shiyeR: [0.5, 0.5],
-    gongshangR: 0.2,
-    shengyuR: 1,
-    fundR: 7
-  }
-}, {
-  value: 'nanjing',
-  text: '南京',
-  social: [3030, 19935],
-  fund: [2020, 25300],
-  insurance: {
-    yanglaoR: [8, 19],
-    yiliaoR: [2, 9],
-    shiyeR: [0.5, 0.5],
-    gongshangR: 0.2,
-    shengyuR: 0.8,
-    fundR: 8
-  }
-}, {
-  value: 'hangzhou',
-  text: '杭州',
-  social: [3054.95, 15274.74],
-  fund: [2010, 24311],
-  insurance: {
-    yanglaoR: [8, 14],
-    yiliaoR: [2, 10.5],
-    shiyeR: [0.5, 0.5],
-    gongshangR: 0.2,
-    shengyuR: 1.2,
-    fundR: 12
-  }
-}, {
   value: 'ningbo',
   text: '宁波',
   social: [3068, 15335],
@@ -127,19 +166,6 @@ const socialFundBase = [{
     gongshangR: 0.4,
     shengyuR: 1,
     fundR: 7
-  }
-}, {
-  value: 'suzhou',
-  text: '苏州',
-  social: [2802, 19613],
-  fund: [2802, 20000],
-  insurance: {
-    yanglaoR: [8, 19],
-    yiliaoR: [2, 9],
-    shiyeR: [0.5, 0.5],
-    gongshangR: 0.4,
-    shengyuR: 0.5,
-    fundR: 8
   }
 }, {
   value: 'fuzhou',
@@ -244,32 +270,6 @@ const socialFundBase = [{
     gongshangR: 0.5,
     shengyuR: 1,
     fundR: 10
-  }
-}, {
-  value: 'guangzhou',
-  text: '广州',
-  social: [2100, 24654],
-  fund: [2100, 24654],
-  insurance: {
-    yanglaoR: [8, 14],
-    yiliaoR: [2, 7],
-    shiyeR: [0.2, 0.64],
-    gongshangR: 0.2,
-    shengyuR: 0.85,
-    fundR: 5
-  }
-}, {
-  value: 'shenzhen',
-  text: '深圳',
-  social: [2200, 25044],
-  fund: [2130, 25044],
-  insurance: {
-    yanglaoR: [8, 14],
-    yiliaoR: [2, 6.2],
-    shiyeR: [0.5, 0.9],
-    gongshangR: 0.168,
-    shengyuR: 0.45,
-    fundR: 5
   }
 }, {
   value: 'nanning',

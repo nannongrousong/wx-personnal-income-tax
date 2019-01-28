@@ -7,7 +7,7 @@
   </view>
   <view class='row'>
     <view data-type='social' class='width-50 y-input-wrapper {{ socialFocusStyle }}'>
-      <input class='y-input text-center width-100' style='border-bottom-style: {{ !socialChecked ? "dashed" : "solid" }};' placeholder='0' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur'
+      <input class='y-input text-center width-100' style='border-bottom-style: {{ !socialChecked ? "dashed" : "solid" }};' placeholder='0' type='number' value='{{ formData.socialShow }}' data-type='social' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur'
         disabled='{{ !socialChecked }}'></input>
     </view>
     <checkbox class='width-40 text-right' data-type='social' checked='{{ socialChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>
@@ -20,7 +20,7 @@
 
   <view class='row'>
     <view data-type='fund' class='width-50 y-input-wrapper {{ fundFocusStyle }}'>
-      <input class='y-input text-center width-100' style='border-bottom-style: {{ !fundChecked ? "dashed" : "solid" }};' placeholder='0' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur'
+      <input class='y-input text-center width-100' style='border-bottom-style: {{ !fundChecked ? "dashed" : "solid" }};' placeholder='0' type='number' value='{{ formData.fundShow }}' data-type='fund' bindinput='bindBaseInputChange' bindfocus='bindBaseInputFocus' bindblur='bindBaseInputBlur'
         disabled='{{ !fundChecked }}'></input>
     </view>
     <checkbox class='width-40 text-right' data-type='fund' checked='{{ fundChecked ? "checked" : "" }}' bindtap='bindCheckChange'>自定义</checkbox>

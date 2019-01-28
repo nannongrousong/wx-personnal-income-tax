@@ -1,5 +1,5 @@
 <view class='wrapper base-insurance'>
-  <view class='title'>五险一金汇缴设置</view>
+  <view class='title'>五险一金汇缴</view>
 
   <view class='fund-show-text'>
     <text>社保汇缴基数</text>

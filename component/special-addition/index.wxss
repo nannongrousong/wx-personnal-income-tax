@@ -16,7 +16,7 @@
 }
 
 .form-icon {
-  margin: 0 0 0 60rpx;
+  margin: 0 30rpx 0 0rpx;
   height: 40rpx;
   width: 40rpx;
 }

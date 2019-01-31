@@ -15,6 +15,6 @@
 }
 
 .fund-show-text text:nth-child(2) {
-  color: #D66;
+  color: #e53935;
   margin-left: 10rpx;
 }

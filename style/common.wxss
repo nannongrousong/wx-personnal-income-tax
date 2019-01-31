@@ -60,6 +60,11 @@
   font-weight: bold;
 }
 
+/* 颜色 */
+.color-tip {
+  color: #e53935;
+}
+
 /* 下拉框 */
 
 .y-select, .y-input {

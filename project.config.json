@@ -13,7 +13,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.0",
+	"libVersion": "2.5.2",
 	"appid": "wx68c7b24a68ffc9a6",
 	"projectname": "personnal-income-tax",
 	"debugOptions": {

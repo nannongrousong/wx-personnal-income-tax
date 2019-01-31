@@ -7,7 +7,7 @@
   </picker>
 
   <view class='y-input-wrapper {{ focusStyle }} pay-input'>
-    <input class='y-input text-center' bindinput='bindPayInput' bindfocus='bindPayFocus' bindblur='bindPayBlur' placeholder='税前工资' type='number' value='{{ grossPay }}' placeholder='税前工资'></input>
+    <input class='y-input text-center' bindinput='bindPayInput' bindfocus='bindPayFocus' bindblur='bindPayBlur' type='number' value='{{ grossPay }}' placeholder='税前工资(月薪)'></input>
   </view>
 
   <view class='part3 text-center ripple' bindtap='bindCompute'>计算</view>

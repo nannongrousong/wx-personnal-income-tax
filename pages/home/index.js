@@ -153,9 +153,9 @@ Page({
     let taxCost = 0;
     //  累计总工资
     let grossPayAll = 0;
-    //  累计免征额度
+    //  累计免税收入
     let basePreferAll = 0;
-    //  累计缴纳五险一金
+    //  累计五险一金
     let insuFundAll = 0;
     //  累计专项附加扣除
     let specailOffAll = 0;
@@ -167,9 +167,9 @@ Page({
       const month = index + 1;
       //  累计总工资
       grossPayAll = grossPay * month;
-      //  累计免征额度
+      //  累计免税收入
       basePreferAll = 5000 * month;
-      //  累计缴纳五险一金
+      //  累计五险一金
       insuFundAll = personCostAll * month;
       //  累计专项附加扣除(子女教育、贷款、租房、赡养老人)
       specailOffAll = (childEduM + loanM + rentM + supportM) * month;
@@ -199,15 +199,15 @@ Page({
         taxRatio,
         baseOff
       } = computeTax(shouldTax);
-      //  月扣除税
+      //  本期应预扣预缴税额
       const monthTax = shouldTax * taxRatio * 0.01 - baseOff - taxCost;
       //  扣除税公式
-      const taxFormula = `${showMoney(shouldTax)}(月应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免征额度) - ${showMoney(insuFundAll)}(累计缴纳五险一金) - ${showMoney(specailOffAll)}(累计专项扣除);
-      ${showMoney(monthTax)}(月扣除税) = ${showMoney(shouldTax)}(月应税工资) * ${showMoney(taxRatio)}%(预扣率) - ${showMoney(baseOff)}(速算扣除数) - ${showMoney(taxCost)}(累计扣除税).`;
+      const taxFormula = `${showMoney(shouldTax)}(累计预扣预缴应纳税所得额) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免税收入) - ${showMoney(insuFundAll)}(累计五险一金) - ${showMoney(specailOffAll)}(累计专项附加扣除)
+      ${showMoney(monthTax < 0 ? 0 : monthTax)}${monthTax < 0 ? `(实:${showMoney(monthTax)})` : ''}(本期应预扣预缴税额) = ${showMoney(shouldTax)}(累计预扣预缴应纳税所得额) * ${showMoney(taxRatio)}%(预扣率) - ${showMoney(baseOff)}(速算扣除数) - ${showMoney(taxCost)}(累计已预扣预缴税额)`;
       //  税后收入
-      const netPay = grossPay - monthTax - personCostAll;
+      const netPay = grossPay - (monthTax < 0 ? 0 : monthTax) - personCostAll;
       //  税后收入公式
-      const realLeftFormula = `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax)}(月扣除税) - ${showMoney(personCostAll)}(月缴纳五险一金).`;
+      const realLeftFormula = `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax < 0 ? 0 : monthTax)}(本期应预扣预缴税额) - ${showMoney(personCostAll)}(月缴纳五险一金)`;
       //  年度总缴纳税
       taxCost += monthTax;
       //  累计到手收入
@@ -221,15 +221,6 @@ Page({
         realLeft: showMoney(netPay),
         realLeftFormula
       };
-    });
-
-    taxDetail.push({
-      id: taxDetail.length,
-      month: '累计',
-      tax: showMoney(taxCost),
-      taxFormula: '/',
-      realLeft: showMoney(leftAll),
-      realLeftFormula: '/'
     });
 
     //  第十二月还为负数
@@ -260,7 +251,7 @@ Page({
         id: taxDetail.length,
         month: '汇算清缴退税[大病医疗]',
         tax: showMoney(returnTax),
-        taxFormula: `${showMoney(newShouldTax)}(累计应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免征额度) - ${showMoney(insuFundAll)}(累计缴纳五险一金) - ${showMoney(specailOffAll + bigSick)}(累计专项附加扣除);
+        taxFormula: `${showMoney(newShouldTax)}(累计应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免税收入) - ${showMoney(insuFundAll)}(累计五险一金) - ${showMoney(specailOffAll + bigSick)}(累计专项附加扣除);
       ${showMoney(newYearTax)}(实际累计税) = ${showMoney(newShouldTax)}(累计应税工资) * ${taxRatio}%(预扣率) - ${showMoney(baseOff)}(速算扣除数);
       ${showMoney(returnTax)}(退税) = ${showMoney(taxCost)}(已预扣预缴税额) - ${showMoney(newYearTax)}(实际累计税).
       `,
@@ -269,6 +260,14 @@ Page({
       });
     }
 
+    taxDetail.push({
+      id: taxDetail.length,
+      month: '累计',
+      tax: showMoney(taxCost),
+      taxFormula: '/',
+      realLeft: showMoney(leftAll),
+      realLeftFormula: '/'
+    });
 
     this.setData({
       taxDetail

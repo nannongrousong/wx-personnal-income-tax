@@ -28,7 +28,7 @@
   <block wx:for="{{ taxDetail }}" wx:key='id'>
     <view class='display-flex row'>
       <view class='flex-2'>{{ item.month }}</view>
-      <view class='flex-1 text-right cell-content' data-detail='{{ item.taxFormula }}' bindtap='bindShowDetail'>{{item.tax}}</view>
+      <view class='flex-1 text-right cell-content' data-detail='{{ item.taxFormula }}' bindtap='bindShowDetail'>{{item.tax < 0 ? ('0(实:' + item.tax + ')') : item.tax}}</view>
       <view class='flex-1 text-right cell-content' data-detail='{{ item.realLeftFormula }}' bindtap='bindShowDetail'>{{item.realLeft}}</view>
     </view>
   </block>

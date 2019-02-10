@@ -12,6 +12,7 @@ const {
 const {
   computeTax
 } = require('../../utils/tax.js');
+const bmap = require('../../libs/bmap-wx.min.js');
 
 Page({
   data: {
@@ -284,6 +285,20 @@ Page({
     wx.showShareMenu({
 
     });
+
+    const BMap = new bmap.BMapWX({
+      ak: ''
+    });
+
+    BMap.regeocoding({
+      fail: function (res) {
+        console.log('fail', res);
+      },
+      success: function (res) {
+        console.log('success', res);
+      }
+    });
+
 
     const {
       windowHeight

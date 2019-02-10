@@ -2,11 +2,16 @@
   "pages": [
     "pages/home/index",
     "pages/more/index"    
-  ],
+  ],  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "快速设置您当前的城市"
+    }
   }
 }

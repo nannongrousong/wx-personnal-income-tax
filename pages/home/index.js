@@ -13,6 +13,9 @@ const {
   computeTax
 } = require('../../utils/tax.js');
 const bmap = require('../../libs/bmap-wx.min.js');
+const { 
+  bMapAK 
+} = require('../../config/global');
 
 Page({
   data: {
@@ -285,9 +288,9 @@ Page({
     wx.showShareMenu({
 
     });
-
+    
     const BMap = new bmap.BMapWX({
-      ak: ''
+      ak: bMapAK
     });
 
     BMap.regeocoding({

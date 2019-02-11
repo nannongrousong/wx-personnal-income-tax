@@ -294,11 +294,24 @@ Page({
     });
 
     BMap.regeocoding({
-      fail: function (res) {
-        console.log('fail', res);
+      fail: (res) => {
+        wx.showToast({
+          title: `请检查位置服务是否开启,${res.errMsg}`,
+          icon: 'none'
+        });
       },
-      success: function (res) {
-        console.log('success', res);
+      success: (locaInfo) => {
+        let cityName = locaInfo.originalData.result && locaInfo.originalData.result.addressComponent.city || '北京市';
+        cityName = cityName.replace('市', '');
+
+        console.log('获取到的城市', cityName);
+
+        let cityInfo = socialFundBase.find((item) => (item.text === cityName));
+        let cityVal = cityInfo.value;
+
+        this.bindAreaChange({
+          detail: cityVal
+        });
       }
     });
 

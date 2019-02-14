@@ -13,8 +13,8 @@ const {
   computeTax
 } = require('../../utils/tax.js');
 const bmap = require('../../libs/bmap-wx.min.js');
-const { 
-  bMapAK 
+const {
+  bMapAK
 } = require('../../config/global');
 
 Page({
@@ -288,7 +288,7 @@ Page({
     wx.showShareMenu({
 
     });
-    
+
     const BMap = new bmap.BMapWX({
       ak: bMapAK
     });
@@ -307,7 +307,13 @@ Page({
         console.log('获取到的城市', cityName);
 
         let cityInfo = socialFundBase.find((item) => (item.text === cityName));
-        let cityVal = cityInfo.value;
+        if (!cityInfo) {
+          wx.showToast({
+            title: '咱没有您当前所在城市的数据，请手动设置相关数据信息。',
+            icon: 'none'
+          });
+        }
+        let cityVal = cityInfo ? cityInfo.value : 'beijing';
 
         this.bindAreaChange({
           detail: cityVal

@@ -36,7 +36,7 @@
 
 <view class='wrapper'>
   <view class='title'>更多</view>
-  <view>1、新税法出台后，本人查阅诸多资料、咨询官方热线后写了这个小程序，但由于个税计算比较复杂，数据仅供参考，具体数据以地方税务局核算后为准</view>
+  <view>1、新税法出台后，为方便大家了解个税计算细则，本人在多次查阅专业资料、咨询官方热线后写下这个小程序，由于个税计算比较复杂，数据仅供参考，具体数据以地方税务局核算后为准</view>
   <view class='mt-10'>2、本人邮箱：
     <text bindtap='bindCopyUrl' data-url='yuanwansong@hotmail.com' class='url'>yuanwansong@hotmail.com</text>，欢迎提出bug和宝贵意见</view>
 </view>

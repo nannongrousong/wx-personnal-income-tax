@@ -245,7 +245,7 @@ Page({
         id: returnTaxDetail.length,
         remark: '汇算清缴-多退',
         tax: showMoney(Math.abs(taxDetail[11].tax)),
-        taxFormula: '/'
+        taxFormula: '见上表12月扣除税'
       });
     }
 
@@ -265,9 +265,9 @@ Page({
         id: returnTaxDetail.length,
         remark: '汇算清缴-大病医疗',
         tax: showMoney(returnTax),
-        taxFormula: `${showMoney(newShouldTax)}(累计应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免税收入) - ${showMoney(insuFundAll)}(累计五险一金) - ${showMoney(specailOffAll + bigSick)}(累计专项附加扣除);
-      ${showMoney(newYearTax)}(实际累计税) = ${showMoney(newShouldTax)}(累计应税工资) * ${taxRatio}%(预扣率) - ${showMoney(baseOff)}(速算扣除数);
-      ${showMoney(returnTax)}(退税) = ${showMoney(taxCost)}(已预扣预缴税额) - ${showMoney(newYearTax)}(实际累计税).
+        taxFormula: `${showMoney(newShouldTax)}(累计应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免税收入) - ${showMoney(insuFundAll)}(累计五险一金) - ${showMoney(specailOffAll + bigSick)}(累计专项附加扣除)
+      ${showMoney(newYearTax)}(实际累计税) = ${showMoney(newShouldTax)}(累计应税工资) * ${taxRatio}%(预扣率) - ${showMoney(baseOff)}(速算扣除数)
+      ${showMoney(returnTax)}(退税) = ${showMoney(taxCost)}(已预扣预缴税额) - ${showMoney(newYearTax)}(实际累计税)
       `
       });
     }

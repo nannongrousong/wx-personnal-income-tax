@@ -28,22 +28,25 @@
   <block wx:for="{{ taxDetail }}" wx:key='id'>
     <view class='display-flex row'>
       <view class='flex-2'>{{ item.month }}</view>
-      <view class='flex-1 text-right cell-content' data-detail='{{ item.taxFormula }}' bindtap='bindShowDetail'>{{ item.tax < 0 ? ('0(实:' + item.tax + ')') : item.tax }}</view>
-      <view class='flex-1 text-right cell-content' data-detail='{{ item.realLeftFormula }}' bindtap='bindShowDetail'>{{ item.realLeft }}</view>
-    </view>
+      <view class='flex-1 text-right cell-content' data-detail='{{ item.taxFormula }}' bindtap='bindShowDetail'>{{ item.tax
+        < 0 ? ( '0(实:' + item.tax + ')') : item.tax }}</view>
+          <view class='flex-1 text-right cell-content' data-detail='{{ item.realLeftFormula }}' bindtap='bindShowDetail'>{{ item.realLeft }}</view>
+      </view>
   </block>
 
-  <view class='title mt-50'>个人所得税退税明细</view>
-  <view class='display-flex table-header row'>
-    <view class='flex-1'>序号</view>
-    <view class='flex-2 text-right'>金额</view>
-    <view class='flex-3 text-right'>备注</view>
-  </view>
-  <block wx:for="{{ returnTaxDetail }}" wx:key='id'>
-    <view class='display-flex row'>
-      <view class='flex-1'>{{ item.id + 1 }}</view>
-      <view class='flex-2 text-right cell-content' data-detail='{{ item.taxFormula }}' bindtap='bindShowDetail'>{{ item.tax }}</view>
-      <view class='flex-3 text-right'>{{ item.remark }}</view>
+  <view wx:if="{{ returnTaxDetail.length > 0 }}">
+    <view class='title mt-50'>个人所得税退税明细</view>
+    <view class='display-flex table-header row'>
+      <view class='flex-1'>序号</view>
+      <view class='flex-2 text-right'>金额</view>
+      <view class='flex-3 text-right'>备注</view>
     </view>
-  </block>
-</view>
+    <block wx:for="{{ returnTaxDetail }}" wx:key='id'>
+      <view class='display-flex row'>
+        <view class='flex-1'>{{ item.id + 1 }}</view>
+        <view class='flex-2 text-right cell-content' data-detail='{{ item.taxFormula }}' bindtap='bindShowDetail'>{{ item.tax }}</view>
+        <view class='flex-3 text-right'>{{ item.remark }}</view>
+      </view>
+    </block>
+  </view>
+  </view>

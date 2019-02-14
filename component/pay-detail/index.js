@@ -23,7 +23,7 @@ Component({
       const {
         detail
       } = e.target.dataset;
-      if(detail == '' || detail == '/') {
+      if (detail == '' || detail == '/') {
         return;
       }
       wx.showModal({

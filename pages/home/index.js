@@ -216,7 +216,7 @@ Page({
       //  税后收入公式
       const realLeftFormula = `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax < 0 ? 0 : monthTax)}(本期应预扣预缴税额) - ${showMoney(personCostAll)}(月缴纳五险一金)`;
       //  年度总缴纳税
-      taxCost += (monthTax < 0 ? 0 : monthTax );
+      taxCost += (monthTax < 0 ? 0 : monthTax);
       //  累计到手收入
       leftAll += netPay;
 

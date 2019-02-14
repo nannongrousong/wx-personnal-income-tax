@@ -8,6 +8,10 @@
   flex: 2;
 }
 
+.flex-3 {
+  flex: 3;
+}
+
 .row {
   border-bottom: 1px solid rgba(224, 224, 224, 1);  
   padding: 20rpx 0;
@@ -15,10 +19,6 @@
 
 .table-header {
   color: rgba(0, 0, 0, 0.54);
-}
-
-.table-detail2 {
-  margin-top: 50rpx;
 }
 
 .cell-content {

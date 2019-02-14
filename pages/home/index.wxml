@@ -4,7 +4,7 @@
   <special-addition bindFormData='bindFormData' formData='{{ formData }}'></special-addition>
   
   <view wx:if="{{ payDetail.length > 0 }}">
-    <pay-detail payDetail='{{ payDetail }}' taxDetail='{{ taxDetail }}'></pay-detail>
+    <pay-detail payDetail='{{ payDetail }}' taxDetail='{{ taxDetail }}' returnTaxDetail='{{ returnTaxDetail }}'></pay-detail>
   </view>
 </view>
 

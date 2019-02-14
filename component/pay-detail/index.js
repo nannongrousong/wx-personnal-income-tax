@@ -7,11 +7,16 @@ Component({
     taxDetail: {
       type: Array,
       value: []
+    },
+    returnTaxDetail: {
+      type: Array,
+      value: []
     }
   },
   data: {
     payDetail: [],
-    taxDetail: []
+    taxDetail: [],
+    returnTaxDetail: []
   },
   methods: {
     bindShowDetail: function(e) {
@@ -31,11 +36,13 @@ Component({
   ready: function() {
     const {
       payDetail,
-      taxDetail
+      taxDetail,
+      returnTaxDetail
     } = this.properties;
     this.setData({
       payDetail,
-      taxDetail
+      taxDetail,
+      returnTaxDetail
     });
   }
 })

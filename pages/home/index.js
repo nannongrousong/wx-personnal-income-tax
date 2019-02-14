@@ -28,6 +28,7 @@ Page({
     },
     payDetail: [],
     taxDetail: [],
+    returnTaxDetail: [],
     footerStyle: ''
   },
   bindAreaChange: function(e) {
@@ -166,6 +167,8 @@ Page({
     //  累计到手收入
     let leftAll = 0;
 
+    //  退税详情
+    const returnTaxDetail = [];
     //  纳税详情
     const taxDetail = Array(12).fill(0).map((item, index) => {
       const month = index + 1;
@@ -213,7 +216,7 @@ Page({
       //  税后收入公式
       const realLeftFormula = `${showMoney(netPay)}(税后月收入) = ${showMoney(grossPay)}(税前月收入) - ${showMoney(monthTax < 0 ? 0 : monthTax)}(本期应预扣预缴税额) - ${showMoney(personCostAll)}(月缴纳五险一金)`;
       //  年度总缴纳税
-      taxCost += monthTax;
+      taxCost += (monthTax < 0 ? 0 : monthTax );
       //  累计到手收入
       leftAll += netPay;
 
@@ -227,15 +230,22 @@ Page({
       };
     });
 
+    taxDetail.push({
+      id: taxDetail.length,
+      month: '累计',
+      tax: showMoney(taxCost),
+      taxFormula: '/',
+      realLeft: showMoney(leftAll),
+      realLeftFormula: '/'
+    });
+
     //  第十二月还为负数
     if (taxDetail[11].tax < 0) {
-      taxDetail.push({
-        id: taxDetail.length,
-        month: '汇算清缴退税[多退]',
+      returnTaxDetail.push({
+        id: returnTaxDetail.length,
+        remark: '汇算清缴-多退',
         tax: showMoney(Math.abs(taxDetail[11].tax)),
-        taxFormula: '/',
-        realLeft: '/',
-        realLeftFormula: '/'
+        taxFormula: '/'
       });
     }
 
@@ -251,33 +261,24 @@ Page({
       const newYearTax = newShouldTax * taxRatio * 0.01 - baseOff;
       //  >0退税，不太应该小于0
       const returnTax = taxCost - newYearTax;
-      taxDetail.push({
-        id: taxDetail.length,
-        month: '汇算清缴退税[大病医疗]',
+      returnTaxDetail.push({
+        id: returnTaxDetail.length,
+        remark: '汇算清缴-大病医疗',
         tax: showMoney(returnTax),
         taxFormula: `${showMoney(newShouldTax)}(累计应税工资) = ${showMoney(grossPayAll)}(累计收入) - ${showMoney(basePreferAll)}(累计免税收入) - ${showMoney(insuFundAll)}(累计五险一金) - ${showMoney(specailOffAll + bigSick)}(累计专项附加扣除);
       ${showMoney(newYearTax)}(实际累计税) = ${showMoney(newShouldTax)}(累计应税工资) * ${taxRatio}%(预扣率) - ${showMoney(baseOff)}(速算扣除数);
       ${showMoney(returnTax)}(退税) = ${showMoney(taxCost)}(已预扣预缴税额) - ${showMoney(newYearTax)}(实际累计税).
-      `,
-        realLeft: '/',
-        realLeftFormula: '/'
+      `
       });
     }
 
-    taxDetail.push({
-      id: taxDetail.length,
-      month: '累计',
-      tax: showMoney(taxCost),
-      taxFormula: '/',
-      realLeft: showMoney(leftAll),
-      realLeftFormula: '/'
-    });
-
     this.setData({
-      taxDetail
+      taxDetail,
+      returnTaxDetail
     });
 
     console.log('taxDetail', taxDetail);
+    console.log('returnTaxDetail', returnTaxDetail);
     console.log('总taxCost', taxCost);
 
     this.setData({
